@@ -1,15 +1,15 @@
 package com.kavindu.commercehub.Product.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.*;
 
 import java.util.Date;
 import java.util.UUID;
@@ -22,7 +22,7 @@ import java.util.UUID;
 public class Product {
 
     @Id
-    @GeneratedValue(generator = "uuild2")
+    @UuidGenerator
     private UUID id;
 
     @NotNull(message = "Add Descrption")
@@ -50,6 +50,7 @@ public class Product {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Category_id")
-    private Category categoryId;
+    private Category category;
+
 }
 
