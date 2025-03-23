@@ -51,7 +51,7 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ProductList> createProduct(@RequestBody Product product) {
+    public ResponseEntity<?> createProduct(@RequestBody Product product) {
         return createProduct.execute(product);
     }
 

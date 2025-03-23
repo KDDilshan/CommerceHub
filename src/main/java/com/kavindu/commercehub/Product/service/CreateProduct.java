@@ -8,33 +8,38 @@ import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Category;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.service.repos.Querry;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
+import com.kavindu.commercehub.ProfanityAPI.ProfanityService;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-
+import java.util.List;
+import java.util.logging.Logger;
 
 
 @Service
 public class CreateProduct implements Querry<Product, ProductList> {
 
+    private static final Logger logger= (Logger) LoggerFactory.getLogger(CreateProduct.class);
+
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+    private final ProfanityService profanityService;
 
-    public CreateProduct(ProductRepository productRepository, CategoryRepository categoryRepository) {
+    public CreateProduct(ProductRepository productRepository, CategoryRepository categoryRepository, ProfanityService profanityService) {
         this.productRepository = productRepository;
         this.categoryRepository = categoryRepository;
+        this.profanityService = profanityService;
     }
 
     @Override
-    public ResponseEntity<ProductList> execute(Product product) {
+    public ResponseEntity<?> execute(Product product) {
+        logger.info("Creating product");
         try {
-
-            if (containsProfanity(product.getDescription())) {
-                return ResponseEntity.badRequest().body(null);
+            Boolean hasProfinity=profanityService.execute(product.getDescription());
+            if(hasProfinity){
+                return ResponseEntity.badRequest().body("Product description contains profanity.");
             }
 
             Category category = categoryRepository.findById(product.getCategory().getId())
@@ -58,17 +63,5 @@ public class CreateProduct implements Querry<Product, ProductList> {
         }
     }
 
-    private boolean containsProfanity(String text) {
-        String apiUrl = "https://api.api-ninjas.com/v1/profanityfilter?text=" + text;
 
-        RestTemplate restTemplate = new RestTemplate();
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("X-Api-Key", "k9PVUsdRYVG7TzZMUJkH+A==OiVvmnEbJdLNIsGw"); // Replace with your actual API key
-        HttpEntity<String> entity = new HttpEntity<>(headers);
-
-        ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.GET, entity, String.class);
-
-        return response.getBody() != null && response.getBody().contains("true");
-    }
 }
