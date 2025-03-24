@@ -6,6 +6,8 @@ import com.kavindu.commercehub.Product.dtos.ProductDto;
 import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.service.repos.Querry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ import java.util.UUID;
 
 @Service
 public class GetProductService implements Querry<UUID, ProductList> {
+
+    private final static Logger logger= LoggerFactory.getLogger(GetProductService.class);
+
     private final ProductRepository productRepository;
 
     public GetProductService(ProductRepository productRepository) {
@@ -22,10 +27,12 @@ public class GetProductService implements Querry<UUID, ProductList> {
 
     @Override
     public ResponseEntity<ProductList> execute(UUID uuid) {
+        logger.info("Get product by id: {}", uuid);
         Optional<Product> product=productRepository.findById(uuid);
         if(product.isPresent()){
             return ResponseEntity.ok(new ProductList(product.get()));
         }
+        logger.info("Product not found");
         throw new ProductNotFoundException();
     }
 }
