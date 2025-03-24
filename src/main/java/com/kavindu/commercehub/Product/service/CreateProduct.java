@@ -1,27 +1,22 @@
 package com.kavindu.commercehub.Product.service;
-
-import com.kavindu.commercehub.Exceptions.ProductNotValidException;
 import com.kavindu.commercehub.Product.Repositories.CategoryRepository;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
-import com.kavindu.commercehub.Product.dtos.ProductDto;
 import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Category;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.service.repos.Querry;
 import com.kavindu.commercehub.ProfanityAPI.ProfanityService;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-import java.util.logging.Logger;
 
 
 @Service
 public class CreateProduct implements Querry<Product, ProductList> {
 
-    private static final Logger logger= (Logger) LoggerFactory.getLogger(CreateProduct.class);
+    private static final Logger logger=  LoggerFactory.getLogger(CreateProduct.class);
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
@@ -35,10 +30,11 @@ public class CreateProduct implements Querry<Product, ProductList> {
 
     @Override
     public ResponseEntity<?> execute(Product product) {
-        logger.info("Creating product");
+        logger.info("Creating product : {}",product);
         try {
             Boolean hasProfinity=profanityService.execute(product.getDescription());
             if(hasProfinity){
+                logger.info("product deciption has profanity words");
                 return ResponseEntity.badRequest().body("Product description contains profanity.");
             }
 
@@ -53,13 +49,18 @@ public class CreateProduct implements Querry<Product, ProductList> {
                     .manufacturer(product.getManufacturer())
                     .category(category)
                     .build();
+            logger.info("Product created");
 
-            Product product2=productRepository.save(product1);
+
+            productRepository.save(product1);
+            logger.info("Product saved successfully with ID: {}",product1.getId());
             return ResponseEntity.ok(new ProductList(product1));
 
         }catch (Exception e) {
             e.printStackTrace();
+            logger.info("Product creation failed");
             return ResponseEntity.badRequest().body(null);
+
         }
     }
 
