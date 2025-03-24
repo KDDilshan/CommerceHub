@@ -1332,3 +1332,9 @@ java.lang.Exception: exception just for purpose of providing stack trace
 2025-03-24T09:41:27.117+05:30  WARN 21276 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2025-03-24T09:41:27.600+05:30  INFO 21276 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
 2025-03-24T09:41:27.611+05:30  INFO 21276 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 7.407 seconds (process running for 8.335)
+2025-03-24T11:01:40.441+05:30  WARN 21276 --- [CommerceHub] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m15s671ms252µs400ns).
+2025-03-24T11:17:21.962+05:30  INFO 21276 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-24T11:17:22.575+05:30  INFO 21276 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-24T11:17:22.653+05:30  INFO 21276 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-24T11:17:22.744+05:30  INFO 21276 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-24T11:17:22.775+05:30  INFO 21276 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
