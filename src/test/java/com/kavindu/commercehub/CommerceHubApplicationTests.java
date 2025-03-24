@@ -8,6 +8,7 @@ class CommerceHubApplicationTests {
 
     @Test
     void contextLoads() {
+        //sanity cheak
     }
 
 }
