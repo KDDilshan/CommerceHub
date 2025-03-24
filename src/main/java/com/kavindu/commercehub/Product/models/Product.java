@@ -52,5 +52,7 @@ public class Product {
     @JoinColumn(name = "Category_id")
     private Category category;
 
+    public Product(String cleanDescription, double v, String usa, String brandX, Category electronics) {
+    }
 }
 
