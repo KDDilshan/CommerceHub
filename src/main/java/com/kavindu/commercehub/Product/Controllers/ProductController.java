@@ -6,6 +6,7 @@ import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.models.ProductUpdate;
 import com.kavindu.commercehub.Product.service.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class ProductController {
         this.updateProductService = updateProductService;
         this.deleteProductService = deleteProductService;
     }
+
 
     @GetMapping("/get/{id}")
     public ResponseEntity<ProductList> getOneProduct(@PathVariable UUID id) {
