@@ -1,22 +1,16 @@
-# Importing JDK and copying required files
-FROM openjdk:17-jdk AS build
+# Stage 1: Build
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
 COPY pom.xml .
-COPY src src
-
-# Copy Maven wrapper
+COPY src ./src
 COPY mvnw .
 COPY .mvn .mvn
-
-# Set execution permission for the Maven wrapper
 RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
-# Stage 2: Create the final Docker image using OpenJDK 17
+# Stage 2: Run
 FROM openjdk:17-jdk-slim
-VOLUME /tmp
-
-# Copy the JAR from the build stage
+WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 8092
+ENTRYPOINT ["java", "-jar", "app.jar"]
