@@ -29,6 +29,5 @@ public class Category {
 
 
     public Category(long l, String electronics) {
-        th
     }
 }
