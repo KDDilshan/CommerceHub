@@ -28,11 +28,17 @@ public class GetProductService implements Querry<UUID, ProductList> {
     @Override
     public ResponseEntity<ProductList> execute(UUID uuid) {
         logger.info("Get product by id: {}", uuid);
+        ResponseEntity<ProductList> product = CheakifproductExist(uuid);
+        if (product != null) return product;
+        logger.info("Product not found");
+        throw new ProductNotFoundException();
+    }
+
+    private ResponseEntity<ProductList> CheakifproductExist(UUID uuid) {
         Optional<Product> product=productRepository.findById(uuid);
         if(product.isPresent()){
             return ResponseEntity.ok(new ProductList(product.get()));
         }
-        logger.info("Product not found");
-        throw new ProductNotFoundException();
+        return null;
     }
 }
