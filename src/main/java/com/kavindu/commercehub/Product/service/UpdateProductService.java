@@ -1,8 +1,6 @@
 package com.kavindu.commercehub.Product.service;
 
-import com.kavindu.commercehub.Exceptions.ErrorMessages;
 import com.kavindu.commercehub.Exceptions.ProductNotFoundException;
-import com.kavindu.commercehub.Exceptions.ProductNotValidException;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
 import com.kavindu.commercehub.Product.dtos.ProductDto;
 import com.kavindu.commercehub.Product.models.Product;
@@ -12,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.UUID;
 
@@ -33,7 +30,7 @@ public class UpdateProductService implements Querry<ProductUpdate, ProductDto> {
         logger.info("updateProduct for :{}", productId);
         Product product = productRepository.findById(productId).get();
         if (product == null) {
-            throw  new ProductNotFoundException();
+            throw  new ProductNotFoundException("product with id [%s] not found".formatted(productId));
         }
         logger.info("updating product :{}", product);
         product.setPrice(productUpdate.getProduct().getPrice());

@@ -2,7 +2,6 @@ package com.kavindu.commercehub.Product.service;
 
 import com.kavindu.commercehub.Exceptions.ProductNotFoundException;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
-import com.kavindu.commercehub.Product.dtos.ProductDto;
 import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.service.repos.Querry;
@@ -31,7 +30,7 @@ public class GetProductService implements Querry<UUID, ProductList> {
         ResponseEntity<ProductList> product = CheakifproductExist(uuid);
         if (product != null) return product;
         logger.info("Product not found");
-        throw new ProductNotFoundException();
+        throw new ProductNotFoundException("product with id [%s] not found".formatted(uuid));
     }
 
     private ResponseEntity<ProductList> CheakifproductExist(UUID uuid) {

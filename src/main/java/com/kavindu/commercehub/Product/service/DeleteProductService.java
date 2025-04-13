@@ -33,7 +33,7 @@ public class DeleteProductService implements Querry<UUID,String> {
         }
 
         logger.info("Product with id {} not found", uuid);
-        throw new ProductNotFoundException();
+        throw new ProductNotFoundException("product with id [%s] not found".formatted(uuid));
 
     }
 }
