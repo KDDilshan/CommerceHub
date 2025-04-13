@@ -36,22 +36,28 @@ public class ImageHandling {
         this.productDaoWithIaage = productDaoWithIaage;
     }
 
-    public void uploadProdcutImage(UUID productID,MultipartFile file)
-    {
-        CheakifproductExist(productID);
-        String profileImageId = UUID.randomUUID().toString();
+    public void uploadProductImage(UUID productID, MultipartFile file) {
+        checkIfProductExists(productID);
+
+        String imageName = UUID.randomUUID().toString();
+
         try {
             s3Service.putObject(
                     s3Buckets.getCustomer(),
-                    "profile-images/%s/%s".formatted(productID, profileImageId),
+                    "product-images/%s/%s".formatted(productID, imageName),
                     file.getBytes()
             );
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to upload product image", e);
         }
-        //TODO : Store image ProfileId to  postgres
-//        customerDao.updateCustomerProfileImageId(profileImageId,customerId);
+
+        // ✅ Update product with new image name
+        Product product = productRepository.findById(productID)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found"));
+        product.setImageName(imageName);
+        productRepository.save(product);
     }
+
 
     public byte[] getProductImage(UUID productID) {
         var product = productRepository.findById(productID)
@@ -75,7 +81,7 @@ public class ImageHandling {
 
 
 
-    private ResponseEntity<ProductList> CheakifproductExist(UUID uuid) {
+    private ResponseEntity<ProductList> checkIfProductExists(UUID uuid) {
         Optional<Product> product=productRepository.findById(uuid);
         if(product.isPresent()){
             return ResponseEntity.ok(new ProductList(product.get()));
