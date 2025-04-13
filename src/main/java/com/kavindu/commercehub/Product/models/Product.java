@@ -40,6 +40,9 @@ public class Product {
     @Column(nullable = false)
     private String manufacturer;
 
+    @Column(nullable = true)
+    private String imageName;
+
     @CreationTimestamp
     @Column(updatable = false,name="created_at")
     private Date created_at;
@@ -51,6 +54,7 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Category_id")
     private Category category;
+
 
     public Product(String cleanDescription, double v, String usa, String brandX, Category electronics) {
     }
