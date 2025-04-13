@@ -1,6 +1,8 @@
 package com.kavindu.commercehub.Product.service;
 
+import com.kavindu.commercehub.Exceptions.ProductNotFoundException;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
+import com.kavindu.commercehub.Product.dtos.ProductDaoWithIaage;
 import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.service.repos.Querry;
@@ -25,11 +27,13 @@ public class ImageHandling {
     private final ProductRepository productRepository;
     private final S3Service s3Service;
     private final S3Buckets s3Buckets;
+    private final ProductDaoWithIaage productDaoWithIaage;
 
-    public ImageHandling(ProductRepository productRepository, S3Service s3Service, S3Buckets s3Buckets) {
+    public ImageHandling(ProductRepository productRepository, S3Service s3Service, S3Buckets s3Buckets, ProductDaoWithIaage productDaoWithIaage) {
         this.productRepository = productRepository;
         this.s3Service = s3Service;
         this.s3Buckets = s3Buckets;
+        this.productDaoWithIaage = productDaoWithIaage;
     }
 
     public void uploadProdcutImage(UUID productID,MultipartFile file)
@@ -48,6 +52,26 @@ public class ImageHandling {
         //TODO : Store image ProfileId to  postgres
 //        customerDao.updateCustomerProfileImageId(profileImageId,customerId);
     }
+
+    public byte[] getProductImage(UUID productID) {
+        var product = productRepository.findById(productID)
+                .orElseThrow(() -> new ProductNotFoundException(
+                        "Product with id [%s] not found".formatted(productID)
+                ));
+
+        String imageName = product.getImageName();
+        if (imageName == null || imageName.isBlank()) {
+            throw new ProductNotFoundException(
+                    "Product with id [%s] profile image not found".formatted(productID)
+            );
+        }
+
+        String key = "product-images/%s/%s".formatted(productID, imageName);
+        return s3Service.getObject(s3Buckets.getCustomer(), key);
+    }
+
+
+
 
 
 
