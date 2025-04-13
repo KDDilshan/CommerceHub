@@ -31,7 +31,7 @@ public class SerchProducts implements Querry<String, List<ProductDto>> {
            return ResponseEntity.ok(productDtos);
         }catch (Exception e) {
             logger.info("not found product for description : {}", description);
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException("product with desciption [%s] not found".formatted(description));
         }
     }
 }
