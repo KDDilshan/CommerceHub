@@ -84,7 +84,7 @@ public class ProductController {
     }
 
 
-    @PostMapping(value = "{productId}/product-image",
+    @PostMapping(value = "/product-image/upload/{productId}",
                     consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public void uploadProductImage(@PathVariable("productId")UUID productId,
                                    @RequestParam("file")MultipartFile file){
@@ -92,13 +92,18 @@ public class ProductController {
     }
 
     @GetMapping("/product-image/{ProductID}")
-    public  byte[] uploadCustomerProfileImage(@PathVariable("ProductID")UUID productID) {
-        return imageHandlingService.getProductImage(productID);
+    public ResponseEntity<byte[]> getProductImage(@PathVariable("ProductID") UUID productID) {
+
+        byte[] image = imageHandlingService.getProductImage(productID);
+
+        if (image == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_PNG)
+                .body(image);
     }
-
-
-
-
 
 
 }
