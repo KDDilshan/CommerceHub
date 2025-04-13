@@ -25,13 +25,13 @@ public class ImageHandlingService {
     private final ProductRepository productRepository;
     private final S3Service s3Service;
     private final S3Buckets s3Buckets;
-    private final ProductDaoWithIaage productDaoWithIaage;
 
-    public ImageHandlingService(ProductRepository productRepository, S3Service s3Service, S3Buckets s3Buckets, ProductDaoWithIaage productDaoWithIaage) {
+
+    public ImageHandlingService(ProductRepository productRepository, S3Service s3Service, S3Buckets s3Buckets) {
         this.productRepository = productRepository;
         this.s3Service = s3Service;
         this.s3Buckets = s3Buckets;
-        this.productDaoWithIaage = productDaoWithIaage;
+
     }
 
     public void uploadProductImage(UUID productID, MultipartFile file) {
