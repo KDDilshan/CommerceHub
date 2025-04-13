@@ -91,6 +91,13 @@ public class ProductController {
         imageHandlingService.uploadProductImage(productId,file);
     }
 
+    @GetMapping("/product-image/{ProductID}")
+    public  byte[] uploadCustomerProfileImage(@PathVariable("ProductID")UUID productID) {
+        return imageHandlingService.getProductImage(productID);
+    }
+
+
+
 
 
 
