@@ -27,7 +27,7 @@ public class JwtService {
     @Value("${security.jwt.Refresh.secret-key}")
     private String refreshSecretKey;
 
-    @Value("36000")
+    @Value("${security.jwt.expiration-time}")
     private long jwtExpirationTime;
 
     public String extractUsername(String token) {
