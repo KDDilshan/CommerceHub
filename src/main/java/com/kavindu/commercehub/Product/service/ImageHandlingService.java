@@ -5,12 +5,10 @@ import com.kavindu.commercehub.Product.Repositories.ProductRepository;
 import com.kavindu.commercehub.Product.dtos.ProductDaoWithIaage;
 import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Product;
-import com.kavindu.commercehub.Product.service.repos.Querry;
 import com.kavindu.commercehub.S3Bucket.S3Buckets;
 import com.kavindu.commercehub.S3Bucket.S3Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +18,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ImageHandling {
+public class ImageHandlingService {
 
     private final static Logger logger= LoggerFactory.getLogger(GetProductService.class);
 
@@ -29,7 +27,7 @@ public class ImageHandling {
     private final S3Buckets s3Buckets;
     private final ProductDaoWithIaage productDaoWithIaage;
 
-    public ImageHandling(ProductRepository productRepository, S3Service s3Service, S3Buckets s3Buckets, ProductDaoWithIaage productDaoWithIaage) {
+    public ImageHandlingService(ProductRepository productRepository, S3Service s3Service, S3Buckets s3Buckets, ProductDaoWithIaage productDaoWithIaage) {
         this.productRepository = productRepository;
         this.s3Service = s3Service;
         this.s3Buckets = s3Buckets;
@@ -75,10 +73,6 @@ public class ImageHandling {
         String key = "product-images/%s/%s".formatted(productID, imageName);
         return s3Service.getObject(s3Buckets.getCustomer(), key);
     }
-
-
-
-
 
 
     private ResponseEntity<ProductList> checkIfProductExists(UUID uuid) {
