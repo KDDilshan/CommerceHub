@@ -33,12 +33,16 @@ public class SecurityConfig {
                         .requestMatchers("/auth/api/**").permitAll()
                         .requestMatchers("/product/v1/delete/**").hasAnyAuthority("ROLE_ADMIN")
                         .requestMatchers("/user/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
-                        .requestMatchers("/product/v1/get/{id}",
+                        .requestMatchers(
+                                "/product/v1/get/**",
                                 "/product/v1/All/**",
                                 "/product/v1/orderName",
                                 "/product/v1/orderPrice",
-                                "/product/v1/serch").permitAll()
-                        .requestMatchers("product/v1/update/**","/product/v1/create"
+                                "/product/v1/serch",
+                                "/product/v1/product-image/upload/**",
+                                "/product/v1/product-image/**"
+                        ).permitAll()
+                        .requestMatchers("/product/v1/update/**","/product/v1/create"
                                 ).hasAnyAuthority("ROLE_USER")
                 )
                 .sessionManagement(session->session
