@@ -1,5 +1,7 @@
 package com.kavindu.commercehub.Product.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kavindu.commercehub.Product.dtos.ProductDto;
 import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Product;
@@ -25,9 +27,10 @@ public class ProductController {
     private final UpdateProductService updateProductService;
     private final DeleteProductService deleteProductService;
     private final ImageHandlingService imageHandlingService;
+    private final ObjectMapper objectMapper;
 
 
-    public ProductController(GetProductService getProductService, GetAllProducts getAllProducts, SerchProducts serchProducts, CreateProduct createProduct, OrderProductsByPriceService orderProductsByPriceService, OrderProductsByName orderProductsByName, UpdateProductService updateProductService, DeleteProductService deleteProductService, ImageHandlingService imageHandlingService) {
+    public ProductController(GetProductService getProductService, GetAllProducts getAllProducts, SerchProducts serchProducts, CreateProduct createProduct, OrderProductsByPriceService orderProductsByPriceService, OrderProductsByName orderProductsByName, UpdateProductService updateProductService, DeleteProductService deleteProductService, ImageHandlingService imageHandlingService, ObjectMapper objectMapper) {
         this.getProductService = getProductService;
         this.getAllProducts = getAllProducts;
         this.serchProducts = serchProducts;
@@ -37,6 +40,7 @@ public class ProductController {
         this.updateProductService = updateProductService;
         this.deleteProductService = deleteProductService;
         this.imageHandlingService = imageHandlingService;
+        this.objectMapper = objectMapper;
     }
 
 
@@ -55,9 +59,13 @@ public class ProductController {
         return serchProducts.execute(description);
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<?> createProduct(@RequestBody Product product) {
-        return createProduct.execute(product);
+    @PostMapping(value = "/create",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> createProduct(
+            @RequestPart("product") String productJson,
+            @RequestPart("image") MultipartFile file
+    ) throws JsonProcessingException {
+        Product product = objectMapper.readValue(productJson, Product.class);
+        return createProduct.execute(product,file);
     }
 
     @GetMapping("/orderPrice")
