@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.persistence.CascadeType;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,9 @@ public class Product {
     @UuidGenerator
     private UUID id;
 
+    @Column(nullable = true)
+    private String name;
+
     @NotNull(message = "Add Descrption")
     @Column(nullable = false)
     private String description;
@@ -35,6 +39,9 @@ public class Product {
 
     @Enumerated(EnumType.STRING)
     private Region region;
+
+    @Column(nullable = true)
+    private int quantity;
 
     @NotNull(message = "add manufacure")
     @Column(nullable = false)
@@ -51,7 +58,7 @@ public class Product {
     @Column(name="updated_at")
     private Date updated_at;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "Category_id")
     private Category category;
 
