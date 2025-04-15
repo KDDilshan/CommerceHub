@@ -50,26 +50,33 @@ public class CreateProduct {
                     .orElseThrow(() -> new RuntimeException("Category not found"));
 
 
-            String imageName = UUID.randomUUID().toString();
-            s3Service.putObject(
-                    s3Buckets.getCustomer(),
-                    "product-images/%s/%s".formatted(product.getId(), imageName),
-                    file.getBytes()
-            );
-
-
-            Product productSave = Product.builder()
+            Product productToSave = Product.builder()
                     .description(product.getDescription())
                     .price(product.getPrice())
                     .region(product.getRegion())
                     .manufacturer(product.getManufacturer())
                     .category(category)
-                    .imageName(imageName)
                     .build();
 
-            productRepository.save(productSave);
-            logger.info("Product saved successfully with ID: {}", productSave.getId());
-            return ResponseEntity.ok(new ProductList(productSave));
+            productRepository.save(productToSave);
+            logger.info("Product saved successfully with ID: {}", productToSave.getId());
+
+
+            String imageName = UUID.randomUUID().toString();
+            String key = "product-images/%s/%s".formatted(productToSave.getId(), imageName);
+            System.out.println("Uploading to S3 with key: " + key);
+
+            s3Service.putObject(
+                    s3Buckets.getCustomer(),
+                    key,
+                    file.getBytes()
+            );
+
+            productToSave.setImageName(imageName);
+            productRepository.save(productToSave);
+
+            logger.info("Product image saved successfully");
+            return ResponseEntity.ok(new ProductList(productToSave));
 
         }catch (IOException e){
             throw new RuntimeException("Failed to uplaod image",e);
