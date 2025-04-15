@@ -49,7 +49,6 @@ public class ImageHandlingService {
             throw new RuntimeException("Failed to upload product image", e);
         }
 
-        // ✅ Update product with new image name
         Product product = productRepository.findById(productID)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found"));
         product.setImageName(imageName);
