@@ -56,8 +56,11 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createProduct(@RequestBody Product product) {
-        return createProduct.execute(product);
+    public ResponseEntity<?> createProduct(
+            @RequestPart("product") Product product,
+            @RequestPart("image") MultipartFile file
+    ) {
+        return createProduct.execute(product,file);
     }
 
     @GetMapping("/orderPrice")
