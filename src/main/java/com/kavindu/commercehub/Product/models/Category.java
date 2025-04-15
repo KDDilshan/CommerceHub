@@ -27,7 +27,6 @@ public class Category {
     @JsonIgnore
     private List<Product> products;
 
-
     public Category(long l, String electronics) {
     }
 }
