@@ -31,6 +31,11 @@ public class GetAllProducts implements Querry<Integer, List<ProductList>> {
     public ResponseEntity<List<ProductList>> execute(Integer limit) {
         try {
             logger.info("getAllProducts called");
+            if (limit == null || limit <= 0) {
+                logger.warn("Invalid limit: {}", limit);
+                return ResponseEntity.badRequest().body(null);
+            }
+
             Page<Product> products=productRepository.findAll(PageRequest.of(0, limit));
             List<ProductList> productDtos=products.stream().map(ProductList::new).toList();
             return ResponseEntity.ok(productDtos);
