@@ -70,6 +70,7 @@ public class CreateProduct {
             productRepository.save(productSave);
             logger.info("Product saved successfully with ID: {}", productSave.getId());
             return ResponseEntity.ok(new ProductList(productSave));
+
         }catch (IOException e){
             throw new RuntimeException("Failed to uplaod image",e);
         }catch (Exception e) {
