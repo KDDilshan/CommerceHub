@@ -41,7 +41,7 @@ public class Product {
     private Region region;
 
     @Column(nullable = true)
-    private int quantity;
+    private Integer quantity;
 
     @NotNull(message = "add manufacure")
     @Column(nullable = false)
