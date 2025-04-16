@@ -6,6 +6,8 @@ import com.kavindu.commercehub.Authentication.services.JwtService;
 import com.kavindu.commercehub.Authentication.services.UpdateUserService;
 import com.kavindu.commercehub.Authentication.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,7 @@ public class AuthController {
     private final JwtService jwtService;
     private final UserService userService;
     private final UpdateUserService updateUserService;
+    private final static Logger logger= LoggerFactory.getLogger(AuthController.class);
 
     public AuthController(JwtService jwtService, UserService userService, UpdateUserService updateUserService) {
         this.jwtService = jwtService;
@@ -87,7 +90,17 @@ public class AuthController {
         return updateUserService.update(userUpdate);
     }
 
+    @GetMapping("/user/profile")
+    public ResponseEntity<UserDto> getUserProfile(@RequestHeader("Authorization") String token) {
 
+        String actualToken = token.replace("Bearer ", "").trim();
+        String userEmail = jwtService.extractUsername(actualToken);
+
+        logger.info("geting info about user [%s]".formatted(userEmail));
+
+        AppUser user = userService.getUserByUserEmail(userEmail);
+        return ResponseEntity.ok(new UserDto(user));
+    }
 
     @PostMapping("/Logout")
     public ResponseEntity<?> logout(HttpServletRequest request) {
