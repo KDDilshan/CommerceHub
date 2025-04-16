@@ -1,31 +1,30 @@
 package com.kavindu.commercehub.Authentication.controllers;
 
-import com.kavindu.commercehub.Authentication.Dto.Request.LoginDto;
-import com.kavindu.commercehub.Authentication.Dto.Request.RegisterDto;
-import com.kavindu.commercehub.Authentication.Dto.Request.TokenRequest;
+import com.kavindu.commercehub.Authentication.Dto.Request.*;
 import com.kavindu.commercehub.Authentication.models.AppUser;
 import com.kavindu.commercehub.Authentication.services.JwtService;
+import com.kavindu.commercehub.Authentication.services.UpdateUserService;
 import com.kavindu.commercehub.Authentication.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/auth/api/")
 public class AuthController {
     private final JwtService jwtService;
     private final UserService userService;
+    private final UpdateUserService updateUserService;
 
-    public AuthController(JwtService jwtService, UserService userService) {
+    public AuthController(JwtService jwtService, UserService userService, UpdateUserService updateUserService) {
         this.jwtService = jwtService;
         this.userService = userService;
+        this.updateUserService = updateUserService;
     }
 
     @PostMapping("/register")
@@ -80,6 +79,16 @@ public class AuthController {
         }
     }
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<UserDto> UpdateUserDetails(@PathVariable Integer id, @RequestBody AppUser appUser){
+        UserUpdate userUpdate=new UserUpdate();
+        userUpdate.setId(id);
+        userUpdate.setAppUser(appUser);
+        return updateUserService.update(userUpdate);
+    }
+
+
+
     @PostMapping("/Logout")
     public ResponseEntity<?> logout(HttpServletRequest request) {
         try{
@@ -91,5 +100,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
     }
+
+
 
 }
