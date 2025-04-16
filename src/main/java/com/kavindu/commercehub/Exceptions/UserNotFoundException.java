@@ -1,2 +1,11 @@
-package com.kavindu.commercehub.Exceptions;public class UserNotFoundException {
+package com.kavindu.commercehub.Exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class UserNotFoundException extends RuntimeException{
+    public UserNotFoundException(String formatted){
+        super(ErrorMessages.USER_NOT_FOUND.getMessage());
+    }
 }
