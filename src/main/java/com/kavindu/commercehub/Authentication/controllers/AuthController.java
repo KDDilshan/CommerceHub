@@ -5,16 +5,18 @@ import com.kavindu.commercehub.Authentication.models.AppUser;
 import com.kavindu.commercehub.Authentication.services.JwtService;
 import com.kavindu.commercehub.Authentication.services.UpdateUserService;
 import com.kavindu.commercehub.Authentication.services.UserService;
+import com.kavindu.commercehub.Authentication.services.ImageHandlingUserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/auth/api/")
@@ -22,12 +24,14 @@ public class AuthController {
     private final JwtService jwtService;
     private final UserService userService;
     private final UpdateUserService updateUserService;
+    private final ImageHandlingUserService imageHandlingUserService;
     private final static Logger logger= LoggerFactory.getLogger(AuthController.class);
 
-    public AuthController(JwtService jwtService, UserService userService, UpdateUserService updateUserService) {
+    public AuthController(JwtService jwtService, UserService userService, UpdateUserService updateUserService, ImageHandlingUserService imageHandlingUserService) {
         this.jwtService = jwtService;
         this.userService = userService;
         this.updateUserService = updateUserService;
+        this.imageHandlingUserService = imageHandlingUserService;
     }
 
     @PostMapping("/register")
@@ -113,6 +117,36 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
     }
+
+    @PostMapping(value = "/user-image/upload/{userId}",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> uploadUserImage(@PathVariable("userId")Integer userId,
+                                   @RequestParam("file") MultipartFile file){
+        try{
+            imageHandlingUserService.uploadProductImage(userId,file);
+            return ResponseEntity.status(HttpStatus.OK).body("image upload sucessfully");
+        }catch (Exception e){
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+        }
+
+    }
+
+    @GetMapping("/user-image/{userId}")
+    public ResponseEntity<byte[]> getProductImage(@PathVariable("userId") Integer userId) {
+
+        byte[] image = imageHandlingUserService.getProductImage(userId);
+
+        if (image == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_PNG)
+                .body(image);
+    }
+
 
 
 
