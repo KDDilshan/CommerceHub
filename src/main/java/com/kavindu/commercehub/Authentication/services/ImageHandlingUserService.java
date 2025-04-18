@@ -55,7 +55,7 @@ public class ImageHandlingUserService {
         userRepository.save(user);
     }
 
-    public byte[] getProductImage(Integer userId) {
+    public byte[] getUserImage(Integer userId) {
         var user= userRepository.findById(userId)
                 .orElseThrow(()->new UsernameNotFoundException("user with id [%d] is not found".formatted(userId)));
 
