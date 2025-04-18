@@ -1,6 +1,7 @@
 package com.kavindu.commercehub.Authentication.controllers;
 
 import com.kavindu.commercehub.Authentication.Dto.Request.*;
+import com.kavindu.commercehub.Authentication.Dto.UserProfileResponse;
 import com.kavindu.commercehub.Authentication.models.AppUser;
 import com.kavindu.commercehub.Authentication.services.JwtService;
 import com.kavindu.commercehub.Authentication.services.UpdateUserService;
@@ -95,15 +96,15 @@ public class AuthController {
     }
 
     @GetMapping("/user/profile")
-    public ResponseEntity<UserDto> getUserProfile(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<UserProfileResponse> getUserProfile(@RequestHeader("Authorization") String token) {
 
         String actualToken = token.replace("Bearer ", "").trim();
         String userEmail = jwtService.extractUsername(actualToken);
 
         logger.info("geting info about user [%s]".formatted(userEmail));
 
-        AppUser user = userService.getUserByUserEmail(userEmail);
-        return ResponseEntity.ok(new UserDto(user));
+        UserProfileResponse profile = userService.getUserByUserEmail(userEmail);
+        return ResponseEntity.ok(profile);
     }
 
     @PostMapping("/Logout")
@@ -136,7 +137,7 @@ public class AuthController {
     @GetMapping("/user-image/{userId}")
     public ResponseEntity<byte[]> getProductImage(@PathVariable("userId") Integer userId) {
 
-        byte[] image = imageHandlingUserService.getProductImage(userId);
+        byte[] image = imageHandlingUserService.getUserImage(userId);
 
         if (image == null) {
             return ResponseEntity.notFound().build();
