@@ -33,6 +33,9 @@ public class AppUser implements UserDetails {
     @Column(nullable = false,unique = true,length = 100)
     private String email;
 
+    @Column(nullable = true)
+    private String imageName;
+
     @CreationTimestamp
     @Column(updatable = false,name="created_at")
     private Date created_at;

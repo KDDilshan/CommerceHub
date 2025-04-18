@@ -147,4 +147,8 @@ public class UserService {
     }
 
 
+    public AppUser getUserByUserEmail(String userEmail) {
+        AppUser user=userRepository.findUserByEmail(userEmail).get();
+        return user;
+    }
 }
