@@ -2,6 +2,7 @@ package com.kavindu.commercehub.Product.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.kavindu.commercehub.Authentication.models.AppUser;
 import jakarta.persistence.*;
 import jakarta.persistence.CascadeType;
 import jakarta.validation.constraints.NotBlank;
@@ -61,6 +62,10 @@ public class Product {
     @ManyToOne()
     @JoinColumn(name = "Category_id")
     private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "created_by", nullable = true)
+    private AppUser createdBy;
 
 
     public Product(String cleanDescription, double v, String usa, String brandX, Category electronics) {
