@@ -7,6 +7,9 @@ import com.kavindu.commercehub.Product.dtos.ProductList;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.models.ProductUpdate;
 import com.kavindu.commercehub.Product.service.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +46,11 @@ public class ProductController {
         this.objectMapper = objectMapper;
     }
 
-
+    @Operation(summary = "Get one product by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
+    })
     @GetMapping("/get/{id}")
     public ResponseEntity<ProductList> getOneProduct(@PathVariable UUID id) {
         return getProductService.execute(id);
