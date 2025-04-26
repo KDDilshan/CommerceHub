@@ -7,6 +7,9 @@ import com.kavindu.commercehub.Authentication.services.JwtService;
 import com.kavindu.commercehub.Authentication.services.UpdateUserService;
 import com.kavindu.commercehub.Authentication.services.UserService;
 import com.kavindu.commercehub.Authentication.services.ImageHandlingUserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +39,11 @@ public class AuthController {
     }
 
     @PostMapping("/register")
+    @Operation(summary = "Register a new user", description = "Registers a new user with provided details.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User registered successfully"),
+            @ApiResponse(responseCode = "400", description = "Registration failed")
+    })
     public ResponseEntity<?> RegisterUser(@RequestBody RegisterDto registerDto) {
         try{
             AppUser registeredUser=userService.RegisterUser(registerDto);
