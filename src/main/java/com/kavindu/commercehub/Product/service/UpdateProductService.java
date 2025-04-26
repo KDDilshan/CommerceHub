@@ -26,16 +26,23 @@ public class UpdateProductService{
 
     public ResponseEntity<ProductDto> execute(UUID productId, ProductUpdateRequest updateRequest) {
 
-        UUID productId = productUpdate.getId();
         logger.info("updateProduct for :{}", productId);
-        Product product = productRepository.findById(productId).get();
-        if (product == null) {
-            throw  new ProductNotFoundException("product with id [%s] not found".formatted(productId));
-        }
+
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ProductNotFoundException("Product with id [%s] not found".formatted(productId)));
+
         logger.info("updating product :{}", product);
-        product.setPrice(productUpdate.getProduct().getPrice());
-        product.setDescription(productUpdate.getProduct().getDescription());
-        product.setManufacturer(productUpdate.getProduct().getManufacturer());
+
+        if (updateRequest.getPrice()!=0) {
+            product.setPrice(updateRequest.getPrice());
+        }
+        if (updateRequest.getDescription() != null) {
+            product.setDescription(updateRequest.getDescription());
+        }
+        if (updateRequest.getManufacturer() != null) {
+            product.setManufacturer(updateRequest.getManufacturer());
+        }
+
         logger.info("updated product :{}", product);
         productRepository.save(product);
         return ResponseEntity.ok(new ProductDto(product));
