@@ -8,6 +8,7 @@ import com.kavindu.commercehub.Product.dtos.ProductUpdateRequest;
 import com.kavindu.commercehub.Product.models.Product;
 import com.kavindu.commercehub.Product.service.*;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.MediaType;
@@ -77,14 +78,18 @@ public class ProductController {
     }
 
 
+
+    @PostMapping(value = "/create",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "Create a new product with image upload")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Product created successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid product data")
     })
-    @PostMapping(value = "/create",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<?> createProduct(
+            @Parameter(description = "Product details as JSON", required = true)
             @RequestPart("product") String productJson,
+
+            @Parameter(description = "Product image file", required = true)
             @RequestPart("image") MultipartFile file
     ) throws JsonProcessingException {
         Product product = objectMapper.readValue(productJson, Product.class);
