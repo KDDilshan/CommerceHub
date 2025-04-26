@@ -57,6 +57,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
+    @Operation(summary = "Register a new user", description = "Registers a new user with provided details.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User registered successfully"),
+            @ApiResponse(responseCode = "400", description = "Registration failed")
+    })
     public ResponseEntity<?> LoginUser(@RequestBody LoginDto loginDto) {
         try{
             return ResponseEntity.ok(userService.loginUser(loginDto));
@@ -68,6 +73,11 @@ public class AuthController {
     }
 
     @PostMapping("/Admin_Register")
+    @Operation(summary = "Register a new admin", description = "Registers a new admin with provided details.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Admin registered successfully"),
+            @ApiResponse(responseCode = "400", description = "Registration failed")
+    })
     public ResponseEntity<?> RegisterAdmin(@RequestBody RegisterDto registerDto) {
         try{
             AppUser registerdAdmin=userService.RegisterAdmin(registerDto);
@@ -80,6 +90,11 @@ public class AuthController {
     }
 
     @PostMapping("/Refresh")
+    @Operation(summary = "Refresh access token", description = "Generates a new access token using a refresh token.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Token refreshed successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid refresh token")
+    })
     public ResponseEntity<?> getAcessToken(@RequestBody TokenRequest request) {
         try {
             String refreshToken=request.getRefresh_token();
@@ -96,6 +111,11 @@ public class AuthController {
     }
 
     @PutMapping("/update/{id}")
+    @Operation(summary = "Update user details", description = "Updates the details of a user by ID.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User updated successfully"),
+            @ApiResponse(responseCode = "400", description = "Update failed")
+    })
     public ResponseEntity<UserDto> UpdateUserDetails(@PathVariable Integer id, @RequestBody AppUser appUser){
         UserUpdate userUpdate=new UserUpdate();
         userUpdate.setId(id);
@@ -104,6 +124,11 @@ public class AuthController {
     }
 
     @GetMapping("/user/profile")
+    @Operation(summary = "Get user profile", description = "Returns the profile details of the authenticated user.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Profile retrieved successfully"),
+            @ApiResponse(responseCode = "401", description = "Unauthorized access")
+    })
     public ResponseEntity<UserProfileResponse> getUserProfile(@RequestHeader("Authorization") String token) {
 
         String actualToken = token.replace("Bearer ", "").trim();
@@ -116,6 +141,11 @@ public class AuthController {
     }
 
     @PostMapping("/Logout")
+    @Operation(summary = "Logout user", description = "Logs out the user and invalidates the session/token.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Logout successful"),
+            @ApiResponse(responseCode = "400", description = "Logout failed")
+    })
     public ResponseEntity<?> logout(HttpServletRequest request) {
         try{
             userService.logout(request);
