@@ -137,6 +137,11 @@ public class ProductController {
     }
 
 
+    @Operation(summary = "Upload product image")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product image uploaded successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
+    })
     @PostMapping(value = "/product-image/upload/{productId}",
                     consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public void uploadProductImage(@PathVariable("productId")UUID productId,
@@ -144,6 +149,12 @@ public class ProductController {
         imageHandlingService.uploadProductImage(productId,file);
     }
 
+
+    @Operation(summary = "Get product image by product ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product image retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Image not found for product")
+    })
     @GetMapping("/product-image/{ProductID}")
     public ResponseEntity<byte[]> getProductImage(@PathVariable("ProductID") UUID productID) {
 
