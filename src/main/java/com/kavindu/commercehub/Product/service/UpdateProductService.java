@@ -3,8 +3,8 @@ package com.kavindu.commercehub.Product.service;
 import com.kavindu.commercehub.Exceptions.ProductNotFoundException;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
 import com.kavindu.commercehub.Product.dtos.ProductDto;
+import com.kavindu.commercehub.Product.dtos.ProductUpdateRequest;
 import com.kavindu.commercehub.Product.models.Product;
-import com.kavindu.commercehub.Product.models.ProductUpdate;
 import com.kavindu.commercehub.Product.service.repos.Querry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
-public class UpdateProductService implements Querry<ProductUpdate, ProductDto> {
+public class UpdateProductService{
      private final static Logger logger= LoggerFactory.getLogger(UpdateProductService.class);
 
     private final ProductRepository productRepository;
@@ -23,8 +23,8 @@ public class UpdateProductService implements Querry<ProductUpdate, ProductDto> {
         this.productRepository = productRepository;
     }
 
-    @Override
-    public ResponseEntity<ProductDto> execute(ProductUpdate productUpdate) {
+
+    public ResponseEntity<ProductDto> execute(UUID productId, ProductUpdateRequest updateRequest) {
 
         UUID productId = productUpdate.getId();
         logger.info("updateProduct for :{}", productId);
