@@ -56,16 +56,29 @@ public class ProductController {
         return getProductService.execute(id);
     }
 
+    @Operation(summary = "Get all products with optional limit")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Products retrieved successfully")
+    })
     @GetMapping("/All")
     public ResponseEntity<List<ProductList>> getAllProducts(@RequestParam(defaultValue = "5")int limit) {
         return getAllProducts.execute(limit);
     }
 
+    @Operation(summary = "Search products by description")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Products matching description retrieved successfully")
+    })
     @GetMapping("/serch")
     public ResponseEntity<List<ProductDto>> getProductsBySerch(@RequestParam String description) {
         return serchProducts.execute(description);
     }
 
+    @Operation(summary = "Create a new product with image upload")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Product created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid product data")
+    })
     @PostMapping(value = "/create",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<?> createProduct(
             @RequestPart("product") String productJson,
