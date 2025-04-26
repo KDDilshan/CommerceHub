@@ -3,12 +3,17 @@ package com.kavindu.commercehub.Authentication.services;
 import com.kavindu.commercehub.Authentication.Dto.Request.LoginDto;
 import com.kavindu.commercehub.Authentication.Dto.Request.RegisterDto;
 import com.kavindu.commercehub.Authentication.Dto.Response.AuthResponse;
+import com.kavindu.commercehub.Authentication.Dto.UserProfileResponse;
 import com.kavindu.commercehub.Authentication.models.AppUser;
 import com.kavindu.commercehub.Authentication.models.RefreshToken;
 import com.kavindu.commercehub.Authentication.models.Roles;
 import com.kavindu.commercehub.Authentication.repositories.RefreshRepository;
 import com.kavindu.commercehub.Authentication.repositories.RoleRepository;
 import com.kavindu.commercehub.Authentication.repositories.UserRepository;
+import com.kavindu.commercehub.Product.Repositories.ProductRepository;
+import com.kavindu.commercehub.Product.models.Product;
+import com.kavindu.commercehub.S3Bucket.S3Buckets;
+import com.kavindu.commercehub.S3Bucket.S3Service;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
@@ -18,10 +23,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -35,15 +42,23 @@ public class UserService {
     private final RoleRepository roleRepository;
     private final JwtService jwtService;
     private final RefreshRepository refreshRepository;
+    private final S3Service s3Service;
+    private final S3Buckets s3Buckets;
+    private final ProductRepository productRepository;
+    private final ImageHandlingUserService imageHandlingUserService;
 
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager, RoleRepository roleRepository, JwtService jwtService, RefreshRepository refreshRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager, RoleRepository roleRepository, JwtService jwtService, RefreshRepository refreshRepository, S3Service s3Service, S3Buckets s3Buckets, ProductRepository productRepository, ImageHandlingUserService imageHandlingUserService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.roleRepository = roleRepository;
         this.jwtService = jwtService;
         this.refreshRepository = refreshRepository;
+        this.s3Service = s3Service;
+        this.s3Buckets = s3Buckets;
+        this.productRepository = productRepository;
+        this.imageHandlingUserService = imageHandlingUserService;
     }
 
     public AppUser RegisterUser(RegisterDto registerDto) {
@@ -147,8 +162,13 @@ public class UserService {
     }
 
 
-    public AppUser getUserByUserEmail(String userEmail) {
-        AppUser user=userRepository.findUserByEmail(userEmail).get();
-        return user;
+    public UserProfileResponse getUserByUserEmail(String userEmail) {
+        AppUser user=userRepository.findUserByEmail(userEmail)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        List<Product> products = productRepository.findByCreatedBy(user);
+
+        return new UserProfileResponse(user.getId(),user.getEmail(), products);
+
     }
 }

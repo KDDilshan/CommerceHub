@@ -1,5 +1,6 @@
 package com.kavindu.commercehub.Product.Repositories;
 
+import com.kavindu.commercehub.Authentication.models.AppUser;
 import com.kavindu.commercehub.Product.models.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,5 +31,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findAllByOrderByPriceDesc();
 
     List<Product> findAll(Sort sort);
+
+    List<Product> findByCreatedBy(AppUser user);
 
 }

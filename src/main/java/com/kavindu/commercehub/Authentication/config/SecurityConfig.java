@@ -37,6 +37,13 @@ public class SecurityConfig {
                         .requestMatchers("/product/v1/delete/**").hasAnyAuthority("ROLE_ADMIN")
                         .requestMatchers("/user/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
                         .requestMatchers(
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/swagger-resources/**",
+                                "/swagger-ui.html",
+                                "/webjars/**"
+                        ).permitAll()
+                        .requestMatchers(
                                 "/product/v1/get/**",
                                 "/product/v1/All/**",
                                 "/product/v1/orderName",
