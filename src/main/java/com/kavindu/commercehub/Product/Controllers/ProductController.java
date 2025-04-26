@@ -56,6 +56,7 @@ public class ProductController {
         return getProductService.execute(id);
     }
 
+
     @Operation(summary = "Get all products with optional limit")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Products retrieved successfully")
@@ -65,6 +66,7 @@ public class ProductController {
         return getAllProducts.execute(limit);
     }
 
+
     @Operation(summary = "Search products by description")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Products matching description retrieved successfully")
@@ -73,6 +75,7 @@ public class ProductController {
     public ResponseEntity<List<ProductDto>> getProductsBySerch(@RequestParam String description) {
         return serchProducts.execute(description);
     }
+
 
     @Operation(summary = "Create a new product with image upload")
     @ApiResponses(value = {
@@ -88,16 +91,32 @@ public class ProductController {
         return createProduct.execute(product,file);
     }
 
+
+    @Operation(summary = "Order products by price ascending or descending")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Products ordered by price retrieved successfully")
+    })
     @GetMapping("/orderPrice")
     public ResponseEntity<List<ProductList>> getOrderProductsByPrice(@RequestParam(defaultValue = "asc")String order) {
         return orderProductsByPriceService.execute(order);
     }
 
+
+    @Operation(summary = "Order products by name ascending or descending")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Products ordered by name retrieved successfully")
+    })
     @GetMapping("/orderName")
     public ResponseEntity<List<ProductList>> getProductSortByName(@RequestParam(defaultValue = "asc")String order) {
         return orderProductsByName.execute(order);
     }
 
+
+    @Operation(summary = "Update an existing product")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product updated successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
+    })
     @PutMapping("/update/{id}")
     public ResponseEntity<ProductDto> updateProduct(@PathVariable UUID id, @RequestBody Product product) {
         ProductUpdate productUpdate=new ProductUpdate();
@@ -106,6 +125,12 @@ public class ProductController {
         return updateProductService.execute(productUpdate);
     }
 
+
+    @Operation(summary = "Delete a product by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
+    })
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable UUID id) {
         return deleteProductService.execute(id);
