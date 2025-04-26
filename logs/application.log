@@ -189,3 +189,76 @@
 2025-04-27T01:15:34.247+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-04-27T01:15:34.300+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-04-27T01:15:34.324+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-27T01:15:40.933+05:30  INFO 4988 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 4988 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
+2025-04-27T01:15:40.935+05:30  INFO 4988 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-27T01:15:42.473+05:30  INFO 4988 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27T01:15:42.609+05:30  INFO 4988 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 5 JPA repository interfaces.
+2025-04-27T01:15:43.626+05:30  INFO 4988 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2025-04-27T01:15:43.661+05:30  INFO 4988 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-27T01:15:43.661+05:30  INFO 4988 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-27T01:15:43.769+05:30  INFO 4988 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-27T01:15:43.769+05:30  INFO 4988 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2772 ms
+2025-04-27T01:15:44.020+05:30  INFO 4988 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27T01:15:44.146+05:30  INFO 4988 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-27T01:15:44.203+05:30  INFO 4988 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-27T01:15:44.662+05:30  INFO 4988 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27T01:15:44.716+05:30  INFO 4988 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-27T01:15:45.052+05:30  INFO 4988 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7769d9b6
+2025-04-27T01:15:45.055+05:30  INFO 4988 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-27T01:15:45.116+05:30  WARN 4988 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-27T01:15:45.144+05:30  INFO 4988 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-27T01:15:46.807+05:30  INFO 4988 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27T01:15:46.968+05:30  INFO 4988 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27T01:15:47.667+05:30  WARN 4988 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27T01:15:48.005+05:30  INFO 4988 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-27T01:15:48.005+05:30  WARN 4988 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-27T01:15:49.093+05:30  INFO 4988 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-27T01:15:50.550+05:30 DEBUG 4988 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-27T01:15:50.971+05:30  INFO 4988 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2025-04-27T01:15:50.985+05:30  INFO 4988 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 10.911 seconds (process running for 11.695)
+2025-04-27T01:30:46.114+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-27T01:30:46.198+05:30  INFO 4988 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-27T01:30:46.443+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27T01:30:46.498+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-27T01:30:46.526+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-27T01:30:52.931+05:30  INFO 14176 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 14176 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
+2025-04-27T01:30:52.936+05:30  INFO 14176 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-27T01:30:54.638+05:30  INFO 14176 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27T01:30:54.747+05:30  INFO 14176 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 5 JPA repository interfaces.
+2025-04-27T01:30:55.866+05:30  INFO 14176 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2025-04-27T01:30:55.888+05:30  INFO 14176 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-27T01:30:55.889+05:30  INFO 14176 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-27T01:30:56.008+05:30  INFO 14176 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-27T01:30:56.008+05:30  INFO 14176 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2983 ms
+2025-04-27T01:30:56.308+05:30  INFO 14176 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27T01:30:56.433+05:30  INFO 14176 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-27T01:30:56.485+05:30  INFO 14176 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-27T01:30:56.947+05:30  INFO 14176 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27T01:30:56.992+05:30  INFO 14176 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-27T01:30:57.320+05:30  INFO 14176 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d800a56
+2025-04-27T01:30:57.323+05:30  INFO 14176 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-27T01:30:57.384+05:30  WARN 14176 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-27T01:30:57.414+05:30  INFO 14176 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-27T01:30:59.165+05:30  INFO 14176 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27T01:30:59.327+05:30  INFO 14176 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27T01:30:59.938+05:30  WARN 14176 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27T01:31:00.260+05:30  INFO 14176 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-27T01:31:00.260+05:30  WARN 14176 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-27T01:31:01.469+05:30  INFO 14176 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-27T01:31:02.932+05:30 DEBUG 14176 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-27T01:31:03.374+05:30  INFO 14176 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2025-04-27T01:31:03.388+05:30  INFO 14176 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 11.31 seconds (process running for 12.221)
