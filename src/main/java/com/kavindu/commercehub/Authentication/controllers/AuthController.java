@@ -159,6 +159,11 @@ public class AuthController {
 
     @PostMapping(value = "/user-image/upload/{userId}",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Operation(summary = "Upload user image", description = "Uploads a profile image for the user.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Image uploaded successfully"),
+            @ApiResponse(responseCode = "400", description = "Image upload failed")
+    })
     public ResponseEntity<?> uploadUserImage(@PathVariable("userId")Integer userId,
                                    @RequestParam("file") MultipartFile file){
         try{
@@ -173,6 +178,11 @@ public class AuthController {
     }
 
     @GetMapping("/user-image/{userId}")
+    @Operation(summary = "Get user image", description = "Retrieves the user's profile image.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Image retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Image not found")
+    })
     public ResponseEntity<byte[]> getProductImage(@PathVariable("userId") Integer userId) {
 
         byte[] image = imageHandlingUserService.getUserImage(userId);
