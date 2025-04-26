@@ -4,8 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kavindu.commercehub.Product.dtos.ProductDto;
 import com.kavindu.commercehub.Product.dtos.ProductList;
+import com.kavindu.commercehub.Product.dtos.ProductUpdateRequest;
 import com.kavindu.commercehub.Product.models.Product;
-import com.kavindu.commercehub.Product.models.ProductUpdate;
 import com.kavindu.commercehub.Product.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -118,11 +118,10 @@ public class ProductController {
             @ApiResponse(responseCode = "404", description = "Product not found")
     })
     @PutMapping("/update/{id}")
-    public ResponseEntity<ProductDto> updateProduct(@PathVariable UUID id, @RequestBody Product product) {
-        ProductUpdate productUpdate=new ProductUpdate();
-        productUpdate.setId(id);
-        productUpdate.setProduct(product);
-        return updateProductService.execute(productUpdate);
+    public ResponseEntity<ProductDto> updateProduct(
+            @PathVariable UUID id,
+            @RequestBody ProductUpdateRequest productUpdateRequest) {
+        return updateProductService.execute(id,productUpdateRequest);
     }
 
 
