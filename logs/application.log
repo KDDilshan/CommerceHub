@@ -1,264 +1,188 @@
-2025-04-27T00:31:49.620+05:30  INFO 13228 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-27T00:31:50.026+05:30  INFO 13228 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-27T00:31:50.487+05:30  INFO 13228 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T00:31:50.545+05:30  INFO 13228 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-27T00:31:50.581+05:30  INFO 13228 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-27T00:32:00.075+05:30  INFO 19184 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 19184 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
-2025-04-27T00:32:00.079+05:30  INFO 19184 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-04-27T00:32:01.978+05:30  INFO 19184 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-27T00:32:02.094+05:30  INFO 19184 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 5 JPA repository interfaces.
-2025-04-27T00:32:03.132+05:30  INFO 19184 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
-2025-04-27T00:32:03.152+05:30  INFO 19184 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-27T00:32:03.152+05:30  INFO 19184 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-04-27T00:32:03.247+05:30  INFO 19184 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-27T00:32:03.248+05:30  INFO 19184 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3082 ms
-2025-04-27T00:32:03.511+05:30  INFO 19184 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-27T00:32:03.631+05:30  INFO 19184 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-04-27T00:32:03.695+05:30  INFO 19184 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-27T00:32:04.155+05:30  INFO 19184 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-27T00:32:04.204+05:30  INFO 19184 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-27T00:32:04.598+05:30  INFO 19184 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@fd87c22
-2025-04-27T00:32:04.600+05:30  INFO 19184 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-27T00:32:04.655+05:30  WARN 19184 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-27T00:32:04.681+05:30  INFO 19184 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-02T14:00:33.218+05:30  INFO 19476 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 19476 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
+2025-05-02T14:00:33.222+05:30  INFO 19476 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-02T14:00:34.407+05:30  INFO 19476 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02T14:00:34.506+05:30  INFO 19476 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 5 JPA repository interfaces.
+2025-05-02T14:00:35.209+05:30  INFO 19476 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2025-05-02T14:00:35.223+05:30  INFO 19476 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-02T14:00:35.224+05:30  INFO 19476 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-02T14:00:35.301+05:30  INFO 19476 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-02T14:00:35.301+05:30  INFO 19476 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2033 ms
+2025-05-02T14:00:35.523+05:30  INFO 19476 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02T14:00:35.614+05:30  INFO 19476 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-02T14:00:35.667+05:30  INFO 19476 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-02T14:00:36.068+05:30  INFO 19476 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02T14:00:36.110+05:30  INFO 19476 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-02T14:00:37.513+05:30  INFO 19476 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43d6262c
+2025-05-02T14:00:37.514+05:30  INFO 19476 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-02T14:00:37.609+05:30  WARN 19476 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-02T14:00:37.718+05:30  INFO 19476 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
-	Database version: 16.3
+	Database version: 16.8
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-27T00:32:06.321+05:30  INFO 19184 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-27T00:32:06.481+05:30  INFO 19184 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T00:32:07.162+05:30  WARN 19184 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-27T00:32:07.528+05:30  INFO 19184 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-04-27T00:32:07.529+05:30  WARN 19184 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-04-27T00:32:08.582+05:30  INFO 19184 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-27T00:32:10.047+05:30 DEBUG 19184 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-04-27T00:32:10.600+05:30  INFO 19184 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
-2025-04-27T00:32:10.615+05:30  INFO 19184 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 11.401 seconds (process running for 12.197)
-2025-04-27T00:32:23.542+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-27T00:32:23.542+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-27T00:32:23.544+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-04-27T00:32:23.570+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
-2025-04-27T00:32:23.583+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.585+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
-2025-04-27T00:32:23.659+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
-2025-04-27T00:32:23.659+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-04-27T00:32:23.659+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
-2025-04-27T00:32:23.659+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
-2025-04-27T00:32:23.659+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
-2025-04-27T00:32:23.660+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.660+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.660+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.660+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.660+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.661+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-04-27T00:32:23.661+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
-2025-04-27T00:32:23.661+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
-2025-04-27T00:32:23.661+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
-2025-04-27T00:32:23.661+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
-2025-04-27T00:32:23.969+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
-2025-04-27T00:32:23.971+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:23.972+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
-2025-04-27T00:32:24.266+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2025-04-27T00:32:24.268+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:24.268+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2025-04-27T00:32:25.255+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 958 ms
-2025-04-27T00:32:39.347+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
-2025-04-27T00:32:39.348+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.349+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
-2025-04-27T00:32:39.389+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
-2025-04-27T00:32:39.391+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
-2025-04-27T00:32:39.391+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.392+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.392+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
-2025-04-27T00:32:39.392+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
-2025-04-27T00:32:39.394+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-04-27T00:32:39.394+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
-2025-04-27T00:32:39.394+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
-2025-04-27T00:32:39.395+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.395+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.395+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-04-27T00:32:39.395+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.395+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
-2025-04-27T00:32:39.396+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
-2025-04-27T00:32:39.544+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
-2025-04-27T00:32:39.545+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.546+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
-2025-04-27T00:32:39.548+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
-2025-04-27T00:32:39.550+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.550+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
-2025-04-27T00:32:39.573+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2025-04-27T00:32:39.575+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:32:39.575+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2025-04-27T00:36:15.265+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /product/v1/get/eaaa94cc-5010-4d53-baef-45bd8df9f0db
-2025-04-27T00:36:15.265+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:36:15.267+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /product/v1/get/eaaa94cc-5010-4d53-baef-45bd8df9f0db
-2025-04-27T00:36:15.269+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-9] c.k.c.Product.service.GetProductService  : Get product by id: eaaa94cc-5010-4d53-baef-45bd8df9f0db
-2025-04-27T00:36:15.442+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-9] c.k.c.Product.service.GetProductService  : Product not found
-2025-04-27T00:36:43.212+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /product/v1/create
-2025-04-27T00:36:43.366+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /product/v1/create
-2025-04-27T00:36:43.396+05:30  WARN 19184 --- [CommerceHub] [http-nio-8092-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'image' is not present.]
-2025-04-27T00:36:43.406+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /error
-2025-04-27T00:36:43.407+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:36:43.408+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
-2025-04-27T00:36:51.564+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /product/v1/All?limit=5
-2025-04-27T00:36:51.565+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:36:51.565+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /product/v1/All?limit=5
-2025-04-27T00:36:51.571+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-7] c.k.c.Product.service.GetAllProducts     : getAllProducts called
-2025-04-27T00:37:12.460+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /product/v1/All?limit=5
-2025-04-27T00:37:12.461+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:37:12.462+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /product/v1/All?limit=5
-2025-04-27T00:37:29.497+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /product/v1/get/99e6699c-012a-4c04-ae9e-c966f4483c10
-2025-04-27T00:37:29.498+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:37:29.498+05:30 DEBUG 19184 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /product/v1/get/99e6699c-012a-4c04-ae9e-c966f4483c10
-2025-04-27T00:37:29.499+05:30  INFO 19184 --- [CommerceHub] [http-nio-8092-exec-6] c.k.c.Product.service.GetProductService  : Get product by id: 99e6699c-012a-4c04-ae9e-c966f4483c10
-2025-04-27T00:38:53.409+05:30  INFO 19184 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-27T00:38:53.467+05:30  INFO 19184 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-27T00:38:53.645+05:30  INFO 19184 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T00:38:53.658+05:30  INFO 19184 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-27T00:38:53.669+05:30  INFO 19184 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-27T00:38:59.715+05:30  INFO 10736 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 10736 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
-2025-04-27T00:38:59.720+05:30  INFO 10736 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-04-27T00:39:01.264+05:30  INFO 10736 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-27T00:39:01.375+05:30  INFO 10736 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 5 JPA repository interfaces.
-2025-04-27T00:39:02.606+05:30  INFO 10736 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
-2025-04-27T00:39:02.646+05:30  INFO 10736 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-27T00:39:02.647+05:30  INFO 10736 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-04-27T00:39:02.795+05:30  INFO 10736 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-27T00:39:02.796+05:30  INFO 10736 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3005 ms
-2025-04-27T00:39:03.121+05:30  INFO 10736 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-27T00:39:03.260+05:30  INFO 10736 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-04-27T00:39:03.339+05:30  INFO 10736 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-27T00:39:03.842+05:30  INFO 10736 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-27T00:39:03.898+05:30  INFO 10736 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-27T00:39:04.251+05:30  INFO 10736 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d800a56
-2025-04-27T00:39:04.253+05:30  INFO 10736 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-27T00:39:04.295+05:30  WARN 10736 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-27T00:39:04.324+05:30  INFO 10736 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-02T14:00:39.031+05:30  INFO 19476 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02T14:00:40.531+05:30  INFO 19476 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02T14:00:41.009+05:30  WARN 19476 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-02T14:00:41.299+05:30  INFO 19476 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-02T14:00:41.300+05:30  WARN 19476 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-02T14:00:42.171+05:30  INFO 19476 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02T14:00:43.343+05:30 DEBUG 19476 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-02T14:00:43.720+05:30  INFO 19476 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2025-05-02T14:00:43.731+05:30  INFO 19476 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 11.138 seconds (process running for 12.259)
+2025-05-02T14:02:03.366+05:30  INFO 19476 --- [CommerceHub] [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-02T14:02:03.366+05:30  INFO 19476 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-02T14:02:03.368+05:30  INFO 19476 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-02T14:02:03.390+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2025-05-02T14:02:03.402+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.404+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2025-05-02T14:02:03.495+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+2025-05-02T14:02:03.495+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+2025-05-02T14:02:03.496+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.496+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.496+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+2025-05-02T14:02:03.496+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+2025-05-02T14:02:03.498+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-05-02T14:02:03.498+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2025-05-02T14:02:03.498+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-05-02T14:02:03.499+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.499+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.499+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.499+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-05-02T14:02:03.499+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2025-05-02T14:02:03.500+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-05-02T14:02:03.740+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2025-05-02T14:02:03.741+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.742+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2025-05-02T14:02:03.782+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2025-05-02T14:02:03.782+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:02:03.783+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2025-05-02T14:02:04.487+05:30  INFO 19476 --- [CommerceHub] [http-nio-8092-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 693 ms
+2025-05-02T14:05:13.729+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/cheak-profinity?text=fuck
+2025-05-02T14:05:13.730+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:05:13.733+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-05-02T14:05:13.743+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error?text=fuck
+2025-05-02T14:05:13.743+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:05:13.743+05:30 DEBUG 19476 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-05-02T14:06:40.407+05:30  INFO 19476 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-02T14:06:40.410+05:30  INFO 19476 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-02T14:06:40.471+05:30  INFO 19476 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02T14:06:40.473+05:30  INFO 19476 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-02T14:06:40.481+05:30  INFO 19476 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-02T14:06:46.069+05:30  INFO 16168 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 16168 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
+2025-05-02T14:06:46.071+05:30  INFO 16168 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-02T14:06:47.027+05:30  INFO 16168 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02T14:06:47.129+05:30  INFO 16168 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 5 JPA repository interfaces.
+2025-05-02T14:06:47.712+05:30  INFO 16168 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2025-05-02T14:06:47.728+05:30  INFO 16168 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-02T14:06:47.728+05:30  INFO 16168 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-02T14:06:47.800+05:30  INFO 16168 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-02T14:06:47.801+05:30  INFO 16168 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1685 ms
+2025-05-02T14:06:47.985+05:30  INFO 16168 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02T14:06:48.117+05:30  INFO 16168 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-02T14:06:48.159+05:30  INFO 16168 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-02T14:06:48.459+05:30  INFO 16168 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02T14:06:48.493+05:30  INFO 16168 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-02T14:06:50.287+05:30  INFO 16168 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cb44a2f
+2025-05-02T14:06:50.296+05:30  INFO 16168 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-02T14:06:50.399+05:30  WARN 16168 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-02T14:06:50.513+05:30  INFO 16168 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
-	Database version: 16.3
+	Database version: 16.8
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-27T00:39:06.144+05:30  INFO 10736 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-27T00:39:06.302+05:30  INFO 10736 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T00:39:06.929+05:30  WARN 10736 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-27T00:39:07.275+05:30  INFO 10736 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-04-27T00:39:07.276+05:30  WARN 10736 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-04-27T00:39:08.374+05:30  INFO 10736 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-27T00:39:09.815+05:30 DEBUG 10736 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-04-27T00:39:10.464+05:30  INFO 10736 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
-2025-04-27T00:39:10.474+05:30  INFO 10736 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 11.521 seconds (process running for 12.197)
-2025-04-27T00:39:16.202+05:30  INFO 10736 --- [CommerceHub] [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-27T00:39:16.202+05:30  INFO 10736 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-27T00:39:16.206+05:30  INFO 10736 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2025-04-27T00:39:16.233+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
-2025-04-27T00:39:16.242+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.244+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
-2025-04-27T00:39:16.434+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
-2025-04-27T00:39:16.435+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.435+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
-2025-04-27T00:39:16.435+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
-2025-04-27T00:39:16.435+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
-2025-04-27T00:39:16.436+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.436+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.436+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
-2025-04-27T00:39:16.437+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
-2025-04-27T00:39:16.438+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-04-27T00:39:16.438+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
-2025-04-27T00:39:16.439+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.439+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.440+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-04-27T00:39:16.440+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
-2025-04-27T00:39:16.830+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
-2025-04-27T00:39:16.831+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.831+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
-2025-04-27T00:39:16.833+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
-2025-04-27T00:39:16.835+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.835+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
-2025-04-27T00:39:16.881+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2025-04-27T00:39:16.881+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-04-27T00:39:16.882+05:30 DEBUG 10736 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2025-04-27T00:39:17.709+05:30  INFO 10736 --- [CommerceHub] [http-nio-8092-exec-6] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 807 ms
-2025-04-27T01:15:33.656+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-27T01:15:33.729+05:30  INFO 10736 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-27T01:15:34.247+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T01:15:34.300+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-27T01:15:34.324+05:30  INFO 10736 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-27T01:15:40.933+05:30  INFO 4988 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 4988 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
-2025-04-27T01:15:40.935+05:30  INFO 4988 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-04-27T01:15:42.473+05:30  INFO 4988 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-27T01:15:42.609+05:30  INFO 4988 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 5 JPA repository interfaces.
-2025-04-27T01:15:43.626+05:30  INFO 4988 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
-2025-04-27T01:15:43.661+05:30  INFO 4988 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-27T01:15:43.661+05:30  INFO 4988 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-04-27T01:15:43.769+05:30  INFO 4988 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-27T01:15:43.769+05:30  INFO 4988 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2772 ms
-2025-04-27T01:15:44.020+05:30  INFO 4988 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-27T01:15:44.146+05:30  INFO 4988 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-04-27T01:15:44.203+05:30  INFO 4988 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-27T01:15:44.662+05:30  INFO 4988 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-27T01:15:44.716+05:30  INFO 4988 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-27T01:15:45.052+05:30  INFO 4988 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7769d9b6
-2025-04-27T01:15:45.055+05:30  INFO 4988 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-27T01:15:45.116+05:30  WARN 4988 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-27T01:15:45.144+05:30  INFO 4988 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-02T14:06:51.834+05:30  INFO 16168 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02T14:06:53.072+05:30  INFO 16168 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02T14:06:53.481+05:30  WARN 16168 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-02T14:06:53.788+05:30  INFO 16168 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-02T14:06:53.789+05:30  WARN 16168 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-02T14:06:54.527+05:30  INFO 16168 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02T14:06:55.655+05:30 DEBUG 16168 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-02T14:06:56.029+05:30  INFO 16168 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2025-05-02T14:06:56.039+05:30  INFO 16168 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 10.508 seconds (process running for 11.268)
+2025-05-02T14:07:22.500+05:30  INFO 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-02T14:07:22.500+05:30  INFO 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-02T14:07:22.502+05:30  INFO 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-02T14:07:22.523+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2025-05-02T14:07:22.534+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.535+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2025-05-02T14:07:22.594+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+2025-05-02T14:07:22.594+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+2025-05-02T14:07:22.595+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.595+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.595+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+2025-05-02T14:07:22.595+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+2025-05-02T14:07:22.596+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2025-05-02T14:07:22.596+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-05-02T14:07:22.596+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-05-02T14:07:22.597+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.597+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.597+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.597+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2025-05-02T14:07:22.597+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-05-02T14:07:22.597+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-05-02T14:07:22.834+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2025-05-02T14:07:22.834+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.836+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2025-05-02T14:07:22.836+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
+2025-05-02T14:07:22.837+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.838+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
+2025-05-02T14:07:22.872+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2025-05-02T14:07:22.873+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:22.873+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2025-05-02T14:07:23.537+05:30  INFO 16168 --- [CommerceHub] [http-nio-8092-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 650 ms
+2025-05-02T14:07:33.825+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/cheak-profinity?text=fuck
+2025-05-02T14:07:33.836+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:33.837+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-05-02T14:07:33.842+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /error?text=fuck
+2025-05-02T14:07:33.843+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-02T14:07:33.844+05:30 DEBUG 16168 --- [CommerceHub] [http-nio-8092-exec-3] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-05-02T14:15:26.821+05:30  INFO 16168 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-02T14:15:26.825+05:30  INFO 16168 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-02T14:15:26.887+05:30  INFO 16168 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02T14:15:26.889+05:30  INFO 16168 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-02T14:15:26.896+05:30  INFO 16168 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-02T23:36:17.198+05:30  INFO 18024 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 18024 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
+2025-05-02T23:36:17.201+05:30  INFO 18024 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-02T23:36:18.466+05:30  INFO 18024 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02T23:36:18.559+05:30  INFO 18024 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 5 JPA repository interfaces.
+2025-05-02T23:36:19.286+05:30  INFO 18024 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2025-05-02T23:36:19.304+05:30  INFO 18024 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-02T23:36:19.305+05:30  INFO 18024 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-02T23:36:19.394+05:30  INFO 18024 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-02T23:36:19.394+05:30  INFO 18024 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2138 ms
+2025-05-02T23:36:19.593+05:30  INFO 18024 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02T23:36:19.708+05:30  INFO 18024 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-02T23:36:19.756+05:30  INFO 18024 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-02T23:36:20.133+05:30  INFO 18024 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02T23:36:20.171+05:30  INFO 18024 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-02T23:36:23.455+05:30  INFO 18024 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15a484a9
+2025-05-02T23:36:23.457+05:30  INFO 18024 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-02T23:36:23.633+05:30  WARN 18024 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-02T23:36:23.997+05:30  INFO 18024 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
-	Database version: 16.3
+	Database version: 16.8
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-27T01:15:46.807+05:30  INFO 4988 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-27T01:15:46.968+05:30  INFO 4988 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T01:15:47.667+05:30  WARN 4988 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-27T01:15:48.005+05:30  INFO 4988 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-04-27T01:15:48.005+05:30  WARN 4988 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-04-27T01:15:49.093+05:30  INFO 4988 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-27T01:15:50.550+05:30 DEBUG 4988 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-04-27T01:15:50.971+05:30  INFO 4988 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
-2025-04-27T01:15:50.985+05:30  INFO 4988 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 10.911 seconds (process running for 11.695)
-2025-04-27T01:30:46.114+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-27T01:30:46.198+05:30  INFO 4988 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-27T01:30:46.443+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T01:30:46.498+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-27T01:30:46.526+05:30  INFO 4988 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-27T01:30:52.931+05:30  INFO 14176 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Starting CommerceHubApplication using Java 21.0.2 with PID 14176 (C:\Users\HP\IdeaProjects\CommerceHub\target\classes started by HP in C:\Users\HP\IdeaProjects\CommerceHub)
-2025-04-27T01:30:52.936+05:30  INFO 14176 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-04-27T01:30:54.638+05:30  INFO 14176 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-27T01:30:54.747+05:30  INFO 14176 --- [CommerceHub] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 5 JPA repository interfaces.
-2025-04-27T01:30:55.866+05:30  INFO 14176 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
-2025-04-27T01:30:55.888+05:30  INFO 14176 --- [CommerceHub] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-27T01:30:55.889+05:30  INFO 14176 --- [CommerceHub] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-04-27T01:30:56.008+05:30  INFO 14176 --- [CommerceHub] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-27T01:30:56.008+05:30  INFO 14176 --- [CommerceHub] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2983 ms
-2025-04-27T01:30:56.308+05:30  INFO 14176 --- [CommerceHub] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-27T01:30:56.433+05:30  INFO 14176 --- [CommerceHub] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-04-27T01:30:56.485+05:30  INFO 14176 --- [CommerceHub] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-27T01:30:56.947+05:30  INFO 14176 --- [CommerceHub] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-27T01:30:56.992+05:30  INFO 14176 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-27T01:30:57.320+05:30  INFO 14176 --- [CommerceHub] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d800a56
-2025-04-27T01:30:57.323+05:30  INFO 14176 --- [CommerceHub] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-27T01:30:57.384+05:30  WARN 14176 --- [CommerceHub] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-27T01:30:57.414+05:30  INFO 14176 --- [CommerceHub] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.3
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-27T01:30:59.165+05:30  INFO 14176 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-27T01:30:59.327+05:30  INFO 14176 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-27T01:30:59.938+05:30  WARN 14176 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-27T01:31:00.260+05:30  INFO 14176 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-04-27T01:31:00.260+05:30  WARN 14176 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-04-27T01:31:01.469+05:30  INFO 14176 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-27T01:31:02.932+05:30 DEBUG 14176 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-04-27T01:31:03.374+05:30  INFO 14176 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
-2025-04-27T01:31:03.388+05:30  INFO 14176 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 11.31 seconds (process running for 12.221)
+2025-05-02T23:36:25.624+05:30  INFO 18024 --- [CommerceHub] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02T23:36:29.973+05:30  INFO 18024 --- [CommerceHub] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02T23:36:30.431+05:30  WARN 18024 --- [CommerceHub] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-02T23:36:30.741+05:30  INFO 18024 --- [CommerceHub] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-02T23:36:30.742+05:30  WARN 18024 --- [CommerceHub] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-02T23:36:31.635+05:30  INFO 18024 --- [CommerceHub] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02T23:36:32.949+05:30 DEBUG 18024 --- [CommerceHub] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CorsFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-02T23:36:33.321+05:30  INFO 18024 --- [CommerceHub] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2025-05-02T23:36:33.331+05:30  INFO 18024 --- [CommerceHub] [main] c.k.commercehub.CommerceHubApplication   : Started CommerceHubApplication in 16.8 seconds (process running for 18.006)
+2025-05-02T23:36:33.333+05:30  INFO 18024 --- [CommerceHub] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-02T23:36:33.342+05:30  INFO 18024 --- [CommerceHub] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-02T23:36:33.401+05:30  INFO 18024 --- [CommerceHub] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02T23:36:33.403+05:30  INFO 18024 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-02T23:36:34.443+05:30  INFO 18024 --- [CommerceHub] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
