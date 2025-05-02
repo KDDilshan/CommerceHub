@@ -7,10 +7,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.experimental.PackagePrivate;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -22,7 +19,7 @@ public class ProfanityContoller {
         this.profanityService = profanityService;
     }
 
-    @GetMapping("/cheak-profinity")
+    @PostMapping("/cheak-profinity")
     @Operation(
             summary = "Check text for profanity",
             description = "Checks the provided text for any profane words and returns whether profanity was detected."
