@@ -20,13 +20,16 @@ public class CartController {
 
     @GetMapping("/{customerId}")
     public ResponseEntity<List<CartItem>> getCart(@PathVariable Long customerId) {
-        return cartService.getCartItems(customerId);
+        List<CartItem> item= (List<CartItem>) cartService.getCartItems(customerId);
+        return ResponseEntity.ok(item);
     }
 
     @PostMapping("/add")
-    public CartItem addToCart(@RequestParam Long customerId, @RequestParam Long productId, @RequestParam int quantity) {
-        return cartService.addToCart(customerId, productId, quantity);
+    public ResponseEntity<CartItem> addToCart(@RequestParam Long customerId, @RequestParam Long productId, @RequestParam int quantity) {
+        CartItem item = cartService.addToCart(customerId, productId, quantity);
+        return ResponseEntity.ok(item);
     }
+
 
     @DeleteMapping("/remove/{itemId}")
     public void removeFromCart(@PathVariable Long itemId) {
