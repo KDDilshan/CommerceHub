@@ -5,6 +5,7 @@ import com.kavindu.commercehub.Cart.models.CartItem;
 import com.kavindu.commercehub.Cart.repositories.CartRepository;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
 import com.kavindu.commercehub.Product.models.Product;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,5 +46,9 @@ public class CartService {
     public void clearCart(Long customerId) {
         List<CartItem> items = cartRepository.findByCustomerId(customerId);
         cartRepository.deleteAll(items);
+    }
+
+    public ResponseEntity<List<CartItem>> getCartItems(Long customerId) {
+
     }
 }
