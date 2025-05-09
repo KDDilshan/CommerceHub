@@ -1,6 +1,7 @@
 package com.kavindu.commercehub.Cart.Service;
 
 import com.kavindu.commercehub.Authentication.models.AppUser;
+import com.kavindu.commercehub.Cart.dtos.CartItemDTO;
 import com.kavindu.commercehub.Cart.dtos.DisplayCartDto;
 import com.kavindu.commercehub.Cart.models.CartItem;
 import com.kavindu.commercehub.Cart.repositories.CartRepository;
@@ -38,11 +39,16 @@ public class CartService {
                     cart.getId(),
                     cart.getProduct().getImageName(),
                     cart.getProduct().getDescription(),
+                    cart.getProduct().getPrice(),
                     cart.getQuantity()
                 ))
                 .collect(Collectors.toList());
 
         return displayCart;
+    }
+
+    public String addToCart(CartItemDTO cartItemDTO){
+        0
     }
 
 //    public void removeItem(Long itemId) {
@@ -54,7 +60,5 @@ public class CartService {
 ////        cartRepository.deleteAll(items);
 ////    }
 //
-//    public ResponseEntity<List<CartItem>> getCartItems(Long customerId) {
-//
-//    }
+
 }
