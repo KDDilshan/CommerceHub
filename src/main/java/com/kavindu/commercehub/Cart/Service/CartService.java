@@ -1,21 +1,25 @@
 package com.kavindu.commercehub.Cart.Service;
 
 import com.kavindu.commercehub.Authentication.models.AppUser;
+import com.kavindu.commercehub.Cart.dtos.DisplayCartDto;
 import com.kavindu.commercehub.Cart.models.CartItem;
 import com.kavindu.commercehub.Cart.repositories.CartRepository;
+import com.kavindu.commercehub.Exceptions.ProductNotFoundException;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
 import com.kavindu.commercehub.Product.models.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class CartService {
 
     private final CartRepository cartRepository;
-
     private final ProductRepository productRepository;
 
     public CartService(CartRepository cartRepository, ProductRepository productRepository) {
@@ -23,32 +27,34 @@ public class CartService {
         this.productRepository = productRepository;
     }
 
-    public CartItem addToCart(Long customerId, Long productId, int quantity) {
-        Optional<CartItem> existingItem = cartRepository.findByCustomerIdAndProductId(customerId, productId);
-        if (existingItem.isPresent()) {
-            CartItem item = existingItem.get();
-            item.setQuantity(item.getQuantity() + quantity);
-            return cartRepository.save(item);
-        } else {
-            CartItem newItem = new CartItem();
-            newItem.setUser(new AppUser(customerId));
-            newItem.setProduct(new Product(productId));
-            newItem.setQuantity(quantity);
-            return cartRepository.save(newItem);
+    public List<DisplayCartDto> getCartItems(UUID customerId){
+        List<CartItem> cartItem=cartRepository.findByCustomerId(customerId);
+        if(cartItem.isEmpty()){
+            throw new ProductNotFoundException("no Products in the cart for "+customerId);
         }
+        List<DisplayCartDto> displayCart=cartItem
+                .stream()
+                .map(cart->new DisplayCartDto(
+                    cart.getId(),
+                    cart.getProduct().getImageName(),
+                    cart.getProduct().getDescription(),
+                    cart.getQuantity()
+                ))
+                .collect(Collectors.toList());
 
+        return displayCart;
     }
 
-    public void removeItem(Long itemId) {
-        cartRepository.deleteById(itemId);
-    }
-
-    public void clearCart(Long customerId) {
-        List<CartItem> items = cartRepository.findByCustomerId(customerId);
-        cartRepository.deleteAll(items);
-    }
-
-    public ResponseEntity<List<CartItem>> getCartItems(Long customerId) {
-
-    }
+//    public void removeItem(Long itemId) {
+//        cartRepository.deleteById(itemId);
+//    }
+//
+////    public void clearCart(Long customerId) {
+////        List<CartItem> items = cartRepository.findByCustomerId(customerId);
+////        cartRepository.deleteAll(items);
+////    }
+//
+//    public ResponseEntity<List<CartItem>> getCartItems(Long customerId) {
+//
+//    }
 }
