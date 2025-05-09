@@ -17,12 +17,12 @@ import lombok.NoArgsConstructor;
 public class CartItem {
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     private int quantity;
 
     @ManyToOne
-    private AppUser user;
+    private AppUser Customer;
 
     @ManyToOne
     private Product product;
