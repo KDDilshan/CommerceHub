@@ -91,9 +91,12 @@ public class CartService {
 
     }
 
-//    public void removeItem(Long itemId) {
-//        cartRepository.deleteById(itemId);
-//    }
+    public void removeItem(int itemId) {
+        if (!cartRepository.existsById(itemId)) {
+            throw new RuntimeException("Cart item not found");
+        }
+        cartRepository.deleteById(itemId);
+    }
 //
 ////    public void clearCart(Long customerId) {
 ////        List<CartItem> items = cartRepository.findByCustomerId(customerId);
