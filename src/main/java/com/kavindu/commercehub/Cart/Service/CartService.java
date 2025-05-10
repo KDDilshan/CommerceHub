@@ -1,12 +1,14 @@
 package com.kavindu.commercehub.Cart.Service;
 
 import com.kavindu.commercehub.Authentication.models.AppUser;
+import com.kavindu.commercehub.Authentication.repositories.UserRepository;
 import com.kavindu.commercehub.Cart.dtos.CartItemDTO;
 import com.kavindu.commercehub.Cart.dtos.CartSummeryDto;
 import com.kavindu.commercehub.Cart.dtos.DisplayCartDto;
 import com.kavindu.commercehub.Cart.models.CartItem;
 import com.kavindu.commercehub.Cart.repositories.CartRepository;
 import com.kavindu.commercehub.Exceptions.ProductNotFoundException;
+import com.kavindu.commercehub.Exceptions.ProductNotValidException;
 import com.kavindu.commercehub.Product.Repositories.ProductRepository;
 import com.kavindu.commercehub.Product.models.Product;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +25,12 @@ public class CartService {
 
     private final CartRepository cartRepository;
     private final ProductRepository productRepository;
+    private final UserRepository userRepository;
 
-    public CartService(CartRepository cartRepository, ProductRepository productRepository) {
+    public CartService(CartRepository cartRepository, ProductRepository productRepository, UserRepository userRepository) {
         this.cartRepository = cartRepository;
         this.productRepository = productRepository;
+        this.userRepository = userRepository;
     }
 
     public CartSummeryDto getCartItems(UUID customerId) {
@@ -61,7 +65,29 @@ public class CartService {
     }
 
 
-    public String addToCart(CartItemDTO cartItemDTO){
+    public String addToCart(CartItemDTO cartItemDTO) throws Exception {
+
+        //get product
+        Product product=productRepository.findById(cartItemDTO.getProductId())
+                .orElseThrow(()->new Exception("product not found"));
+
+        //get customer
+        AppUser user=userRepository.findById(cartItemDTO.getCustomerId())
+                .orElseThrow(()->new Exception("customer not found"));
+
+
+        if(cartItemDTO.getQuantity()>product.getQuantity()){
+            throw new Exception("maximum quantity is "+product.getQuantity());
+        }
+
+        CartItem cartItem=new CartItem();
+        cartItem.setCustomer(user);
+        cartItem.setProduct(product);
+        cartItem.setQuantity(cartItemDTO.getQuantity());
+
+        cartRepository.save(cartItem);
+
+        return "cart Items are saved successfully";
 
     }
 
