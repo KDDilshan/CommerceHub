@@ -97,11 +97,11 @@ public class CartService {
         }
         cartRepository.deleteById(itemId);
     }
-//
-////    public void clearCart(Long customerId) {
-////        List<CartItem> items = cartRepository.findByCustomerId(customerId);
-////        cartRepository.deleteAll(items);
-////    }
-//
+
+    public void clearCart(UUID customerId) {
+        List<CartItem> items = cartRepository.findByCustomerId(customerId);
+        cartRepository.deleteAll(items);
+    }
+
 
 }
