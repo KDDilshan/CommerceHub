@@ -26,11 +26,11 @@ public class CartController {
         return ResponseEntity.ok(item);
     }
 
-//    @PostMapping("/add")
-//    public ResponseEntity<CartItem> addToCart(@RequestParam Long customerId, @RequestParam Long productId, @RequestParam int quantity) {
-//        CartItem item = cartService.addToCart(customerId, productId, quantity);
-//        return ResponseEntity.ok(item);
-//    }
+    @PostMapping("/add")
+    public ResponseEntity<String> addToCart(@RequestBody CartItemDTO cartItemDTO) {
+        String  cartMessage=cartService.addToCart(cartItemDTO);
+        return ResponseEntity.ok(cartMessage);
+    }
 
 
 //    @DeleteMapping("/remove/{itemId}")
