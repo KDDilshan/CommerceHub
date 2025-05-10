@@ -40,10 +40,10 @@ public class CartController {
         return ResponseEntity.noContent().build(); // 204 No Content
     }
 
-//    @DeleteMapping("/clear/{customerId}")
-//    public ResponseEntity<Void> clearCart(@PathVariable Long customerId) {
-//        cartService.clearCart(customerId);
-//        return ResponseEntity.noContent().build(); // 204 No Content
-//    }
+    @DeleteMapping("/clear/{customerId}")
+    public ResponseEntity<Void> clearCart(@PathVariable UUID customerId) {
+        cartService.clearCart(customerId);
+        return ResponseEntity.noContent().build(); // 204 No Content
+    }
 
 }
