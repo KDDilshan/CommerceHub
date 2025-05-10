@@ -2,6 +2,7 @@ package com.kavindu.commercehub.Cart.Service;
 
 import com.kavindu.commercehub.Authentication.models.AppUser;
 import com.kavindu.commercehub.Cart.dtos.CartItemDTO;
+import com.kavindu.commercehub.Cart.dtos.CartSummeryDto;
 import com.kavindu.commercehub.Cart.dtos.DisplayCartDto;
 import com.kavindu.commercehub.Cart.models.CartItem;
 import com.kavindu.commercehub.Cart.repositories.CartRepository;
@@ -28,27 +29,40 @@ public class CartService {
         this.productRepository = productRepository;
     }
 
-    public List<DisplayCartDto> getCartItems(UUID customerId){
-        List<CartItem> cartItem=cartRepository.findByCustomerId(customerId);
-        if(cartItem.isEmpty()){
-            throw new ProductNotFoundException("no Products in the cart for "+customerId);
+    public CartSummeryDto getCartItems(UUID customerId) {
+        List<CartItem> cartItems = cartRepository.findByCustomerId(customerId);
+
+        if (cartItems.isEmpty()) {
+            throw new ProductNotFoundException("No products in the cart for " + customerId);
         }
-        List<DisplayCartDto> displayCart=cartItem
-                .stream()
-                .map(cart->new DisplayCartDto(
-                    cart.getId(),
-                    cart.getProduct().getImageName(),
-                    cart.getProduct().getDescription(),
-                    cart.getProduct().getPrice(),
-                    cart.getQuantity()
-                ))
+
+        List<DisplayCartDto> displayCart = cartItems.stream()
+                .map(cart -> {
+                    double unitPrice = cart.getProduct().getPrice();
+                    int quantity = cart.getQuantity();
+                    double subtotal = unitPrice * quantity;
+
+                    return new DisplayCartDto(
+                            cart.getId(),
+                            cart.getProduct().getImageName(),
+                            cart.getProduct().getDescription(),
+                            unitPrice,
+                            quantity,
+                            subtotal
+                    );
+                })
                 .collect(Collectors.toList());
 
-        return displayCart;
+        double grandTotal = displayCart.stream()
+                .mapToDouble(DisplayCartDto::getTotal_price)
+                .sum();
+
+        return new CartSummeryDto(displayCart, grandTotal);
     }
 
+
     public String addToCart(CartItemDTO cartItemDTO){
-        0
+
     }
 
 //    public void removeItem(Long itemId) {
