@@ -13,5 +13,7 @@ public class DisplayCartDto {
     private int id;
     private String image;
     private String productDetails;
+    private double price;
     private int quantity;
+    private double total_price;
 }
