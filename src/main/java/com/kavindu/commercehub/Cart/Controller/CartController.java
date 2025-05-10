@@ -2,6 +2,7 @@ package com.kavindu.commercehub.Cart.Controller;
 
 import com.kavindu.commercehub.Cart.Service.CartService;
 import com.kavindu.commercehub.Cart.dtos.CartItemDTO;
+import com.kavindu.commercehub.Cart.dtos.CartSummeryDto;
 import com.kavindu.commercehub.Cart.dtos.DisplayCartDto;
 import com.kavindu.commercehub.Cart.models.CartItem;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +22,13 @@ public class CartController {
     }
 
     @GetMapping("/{customerId}")
-    public ResponseEntity<List<DisplayCartDto>> getCart(@PathVariable UUID customerId) {
-        List<DisplayCartDto> item = cartService.getCartItems(customerId);
+    public ResponseEntity<CartSummeryDto> getCart(@PathVariable UUID customerId) {
+        CartSummeryDto item = cartService.getCartItems(customerId);
         return ResponseEntity.ok(item);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addToCart(@RequestBody CartItemDTO cartItemDTO) {
+    public ResponseEntity<String> addToCart(@RequestBody CartItemDTO cartItemDTO) throws Exception {
         String  cartMessage=cartService.addToCart(cartItemDTO);
         return ResponseEntity.ok(cartMessage);
     }
