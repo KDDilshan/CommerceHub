@@ -34,11 +34,11 @@ public class CartController {
     }
 
 
-//    @DeleteMapping("/remove/{itemId}")
-//    public ResponseEntity<Void> removeFromCart(@PathVariable Long itemId) {
-//        cartService.removeItem(itemId);
-//        return ResponseEntity.noContent().build(); // 204 No Content
-//    }
+    @DeleteMapping("/remove/{itemId}")
+    public ResponseEntity<Void> removeFromCart(@PathVariable int itemId) {
+        cartService.removeItem(itemId);
+        return ResponseEntity.noContent().build(); // 204 No Content
+    }
 
 //    @DeleteMapping("/clear/{customerId}")
 //    public ResponseEntity<Void> clearCart(@PathVariable Long customerId) {
