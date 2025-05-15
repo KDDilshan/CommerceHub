@@ -1,13 +1,21 @@
 package com.kavindu.commercehub.payment.models;
 
 import com.kavindu.commercehub.Authentication.models.AppUser;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Orders {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private Date date;
@@ -19,6 +27,4 @@ public class Orders {
     @OneToOne
     private AppUser user;
 
-
-  
 }
