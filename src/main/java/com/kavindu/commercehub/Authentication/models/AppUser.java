@@ -1,6 +1,7 @@
 package com.kavindu.commercehub.Authentication.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.kavindu.commercehub.payment.models.ShippingDetails;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -89,4 +90,8 @@ public class AppUser implements UserDetails {
     @ToString.Exclude
     @JsonIgnore
     private RefreshToken refreshToken;
+
+    @OneToOne(mappedBy = "appUser", cascade = CascadeType.ALL)
+    private ShippingDetails shippingDetails;
+
 }
