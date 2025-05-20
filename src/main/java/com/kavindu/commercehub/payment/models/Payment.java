@@ -18,22 +18,26 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 public class Payment {
+
     @Id
     @UuidGenerator
     private UUID id;
 
-    @NotNull(message = "add suitable payment type")
-    private Enum<PaymentType> Payment_method;
+    @Enumerated(EnumType.STRING)
+    @NotNull(message = "Add suitable payment type")
+    private PaymentType paymentMethod;
 
-    @NotNull(message = "Required Payment Status")
-    private Enum<PaymentStatus> payment_status;
+    @Enumerated(EnumType.STRING)
+    @NotNull(message = "Required payment status")
+    private PaymentStatus paymentStatus;
 
-    @NotNull(message = "Stripe Id not added")
-    private String TransactionId;
+    @NotNull(message = "Stripe ID not added")
+    private String transactionId;
 
     @CreationTimestamp
-    private Date paid_at;
+    private Date paidAt;
 
     @OneToOne
+    @JoinColumn(name = "order_id") // foreign key
     private Orders orders;
 }
