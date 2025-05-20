@@ -25,5 +25,5 @@ public class Order_items {
 
     private int quantity;
 
-    private int price;
+    private double price;
 }
