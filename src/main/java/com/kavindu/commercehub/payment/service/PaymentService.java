@@ -15,10 +15,13 @@ public class PaymentService {
 
     private final PaymentRepository paymentRepository;
     private final OrderRepository orderRepository;
+    private final EmailService emailService;
 
-    public PaymentService(PaymentRepository paymentRepository, OrderRepository orderRepository) {
+
+    public PaymentService(PaymentRepository paymentRepository, OrderRepository orderRepository, EmailService emailService) {
         this.paymentRepository = paymentRepository;
         this.orderRepository = orderRepository;
+        this.emailService = emailService;
     }
 
     public Payment processPayment(PaymentRequest request) {
@@ -38,6 +41,12 @@ public class PaymentService {
             orders.setStatus("PAID");
             orderRepository.save(orders);
         }
+
+        emailService.sendConfirmation(
+                orders.getUser().getEmail(),
+                "Order Confirmed",
+                "Thank you for your order. Your payment was successful"
+        );
 
         return savedpayment;
     }
