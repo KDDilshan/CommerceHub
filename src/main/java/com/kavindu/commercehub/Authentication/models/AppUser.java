@@ -91,7 +91,7 @@ public class AppUser implements UserDetails {
     @JsonIgnore
     private RefreshToken refreshToken;
 
-    @OneToOne(mappedBy = "appUser", cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private ShippingDetails shippingDetails;
 
 }
