@@ -26,8 +26,7 @@ public class ShippingDetails {
     @JoinColumn(name = "order_id")
     private Orders order;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "User_id")
     private AppUser appUser;
-
 }
