@@ -25,11 +25,11 @@ public class Orders {
 
     private int total_amount;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private AppUser user;
 
-    @OneToMany
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private List<Order_items> orderItemsList;
 
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
