@@ -5,6 +5,7 @@ import com.kavindu.commercehub.payment.Repository.PaymentRepository;
 import com.kavindu.commercehub.payment.dto.PaymentRequest;
 import com.kavindu.commercehub.payment.models.Orders;
 import com.kavindu.commercehub.payment.models.Payment;
+import com.kavindu.commercehub.payment.models.enums.PaymentStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -31,6 +32,13 @@ public class PaymentService {
         payment.setPaymentStatus(request.getPaymentStatus());
         payment.setTransactionId(request.getTransactionId());
 
-        return paymentRepository.save(payment);
+        Payment savedpayment=paymentRepository.save(payment);
+
+        if(request.getPaymentStatus()== PaymentStatus.SUCCESS){
+            orders.setStatus("PAID");
+            orderRepository.save(orders);
+        }
+
+        return savedpayment;
     }
 }
