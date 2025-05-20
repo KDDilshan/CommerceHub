@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +26,13 @@ public class Orders {
     private int total_amount;
 
     @OneToOne
+    @JoinColumn(name = "id")
     private AppUser user;
+
+    @OneToMany
+    private List<Order_items> orderItemsList;
+
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private ShippingDetails  shippingDetails;
 
 }
