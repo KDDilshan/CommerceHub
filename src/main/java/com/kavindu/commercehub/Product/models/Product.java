@@ -3,6 +3,7 @@ package com.kavindu.commercehub.Product.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.kavindu.commercehub.Authentication.models.AppUser;
+import com.kavindu.commercehub.payment.models.Order_items;
 import jakarta.persistence.*;
 import jakarta.persistence.CascadeType;
 import jakarta.validation.constraints.NotBlank;
@@ -14,6 +15,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -66,6 +68,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "created_by", nullable = true)
     private AppUser createdBy;
+
+    @OneToMany(mappedBy = "product")
+    private List<Order_items> orderItems;
 
 
     public Product(String cleanDescription, double v, String usa, String brandX, Category electronics) {
