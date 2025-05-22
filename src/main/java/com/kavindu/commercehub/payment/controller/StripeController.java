@@ -1,7 +1,7 @@
-package com.kavindu.commercehub.Stripe.Controller;
+package com.kavindu.commercehub.payment.controller;
 
-import com.kavindu.commercehub.Stripe.service.StripePaymentService;
-import com.kavindu.commercehub.Stripe.service.StripeWebhookService;
+import com.kavindu.commercehub.payment.service.StripePaymentService;
+import com.kavindu.commercehub.payment.service.StripeWebhookService;
 import com.stripe.exception.StripeException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
