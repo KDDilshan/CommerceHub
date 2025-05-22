@@ -22,7 +22,7 @@ public class CartItem {
     private int quantity;
 
     @ManyToOne
-    private AppUser Customer;
+    private AppUser customer;
 
     @ManyToOne
     private Product product;
