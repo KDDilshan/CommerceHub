@@ -5,6 +5,7 @@ import com.kavindu.commercehub.payment.Repository.PaymentRepository;
 import com.kavindu.commercehub.payment.dto.PaymentRequest;
 import com.kavindu.commercehub.payment.models.Orders;
 import com.kavindu.commercehub.payment.models.Payment;
+import com.kavindu.commercehub.payment.service.EmailService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;
@@ -19,10 +20,12 @@ public class StripePaymentService {
 
     private final OrderRepository orderRepository;
     private final PaymentRepository paymentRepository;
+    private final EmailService emailService;
 
-    public StripePaymentService(OrderRepository orderRepository, PaymentRepository paymentRepository) {
+    public StripePaymentService(OrderRepository orderRepository, PaymentRepository paymentRepository, EmailService emailService) {
         this.orderRepository = orderRepository;
         this.paymentRepository = paymentRepository;
+        this.emailService = emailService;
     }
 
     public Map<String, String> createPaymentIntent(Map<String, Object> data) throws StripeException {
@@ -62,6 +65,12 @@ public class StripePaymentService {
 
         order.setStatus("PAID");
         orderRepository.save(order);
+
+        emailService.sendConfirmation(
+                order.getUser().getEmail(),
+                "Order Confirmed",
+                "Thank you for your order. Your payment was successful"
+        );
     }
 
 }
