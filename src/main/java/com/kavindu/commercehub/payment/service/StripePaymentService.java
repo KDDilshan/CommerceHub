@@ -1,11 +1,10 @@
-package com.kavindu.commercehub.Stripe.service;
+package com.kavindu.commercehub.payment.service;
 
 import com.kavindu.commercehub.payment.Repository.OrderRepository;
 import com.kavindu.commercehub.payment.Repository.PaymentRepository;
 import com.kavindu.commercehub.payment.dto.PaymentRequest;
 import com.kavindu.commercehub.payment.models.Orders;
 import com.kavindu.commercehub.payment.models.Payment;
-import com.kavindu.commercehub.payment.service.EmailService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;

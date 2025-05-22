@@ -1,4 +1,4 @@
-package com.kavindu.commercehub.Stripe.service;
+package com.kavindu.commercehub.payment.service;
 
 import com.kavindu.commercehub.payment.Repository.OrderRepository;
 import com.kavindu.commercehub.payment.dto.PaymentRequest;

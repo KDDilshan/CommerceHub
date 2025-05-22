@@ -1,4 +1,4 @@
-package com.kavindu.commercehub.Stripe.config;
+package com.kavindu.commercehub.payment.config;
 
 import com.stripe.Stripe;
 import jakarta.annotation.PostConstruct;
