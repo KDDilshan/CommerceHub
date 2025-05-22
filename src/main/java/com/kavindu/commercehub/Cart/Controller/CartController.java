@@ -22,7 +22,7 @@ public class CartController {
     }
 
     @GetMapping("/{customerId}")
-    public ResponseEntity<CartSummeryDto> getCart(@PathVariable UUID customerId) {
+    public ResponseEntity<CartSummeryDto> getCart(@PathVariable int customerId) {
         CartSummeryDto item = cartService.getCartItems(customerId);
         return ResponseEntity.ok(item);
     }
@@ -41,7 +41,7 @@ public class CartController {
     }
 
     @DeleteMapping("/clear/{customerId}")
-    public ResponseEntity<Void> clearCart(@PathVariable UUID customerId) {
+    public ResponseEntity<Void> clearCart(@PathVariable int customerId) {
         cartService.clearCart(customerId);
         return ResponseEntity.noContent().build(); // 204 No Content
     }

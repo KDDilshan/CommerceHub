@@ -33,7 +33,7 @@ public class CartService {
         this.userRepository = userRepository;
     }
 
-    public CartSummeryDto getCartItems(UUID customerId) {
+    public CartSummeryDto getCartItems(int customerId) {
         List<CartItem> cartItems = cartRepository.findByCustomerId(customerId);
 
         if (cartItems.isEmpty()) {
@@ -98,7 +98,7 @@ public class CartService {
         cartRepository.deleteById(itemId);
     }
 
-    public void clearCart(UUID customerId) {
+    public void clearCart(int customerId) {
         List<CartItem> items = cartRepository.findByCustomerId(customerId);
         cartRepository.deleteAll(items);
     }
